@@ -1,0 +1,18 @@
+{
+	"color_scheme": "Packages/Zeus/Sublime Text/Zeus-Sublime-Text.tmTheme",
+	"default_line_ending": "unix",
+	"ensure_newline_at_eof_on_save": false,
+	"font_face": "Hack",
+	"font_size": 24,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"scroll_past_end": true,
+	"show_definitions": false,
+	"tab_size": 2,
+	"theme": "itg.flat.dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}

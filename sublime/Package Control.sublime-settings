@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Babel",
+		"DocBlockr",
+		"EditorConfig",
+		"Emmet",
+		"HyperClick",
+		"Package Control",
+		"PlainTasks",
+		"Pretty JSON",
+		"ReactJS",
+		"Sass",
+		"Stylus",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-jsxhint",
+		"Sync Settings",
+		"TabsExtra",
+		"Theme - itg.flat",
+		"Zeus"
+	]
+}
