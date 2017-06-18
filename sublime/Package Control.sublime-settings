@@ -7,6 +7,8 @@
 	[
 		"AdvancedNewFile",
 		"Babel",
+		"Boxy Theme",
+		"Color Highlighter",
 		"DocBlockr",
 		"EditorConfig",
 		"Emmet",
@@ -14,6 +16,7 @@
 		"Package Control",
 		"PlainTasks",
 		"Pretty JSON",
+		"Protocol Buffer Syntax",
 		"ReactJS",
 		"Sass",
 		"Stylus",
@@ -22,6 +25,7 @@
 		"SublimeLinter-jsxhint",
 		"Sync Settings",
 		"TabsExtra",
+		"tern_for_sublime",
 		"Theme - itg.flat",
 		"Zeus"
 	]

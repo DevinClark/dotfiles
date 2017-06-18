@@ -1,5 +1,9 @@
 {
-	"color_scheme": "Packages/Zeus/Sublime Text/Zeus-Sublime-Text.tmTheme",
+	"added_words":
+	[
+		"Techlahoma"
+	],
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Nova.tmTheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": false,
 	"font_face": "Hack",
@@ -11,7 +15,20 @@
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"tab_size": 2,
-	"theme": "itg.flat.dark.sublime-theme",
+	"theme": "Boxy Nova.sublime-theme",
+	"theme_accent_mono": true,
+	"theme_button_rounded": true,
+	"theme_find_panel_close_hidden": true,
+	"theme_icons_atomized": true,
+	"theme_sidebar_folder_arrow": true,
+	"theme_sidebar_heading_bold": true,
+	"theme_sidebar_highlight_selected_text_only": true,
+	"theme_sidebar_highlight_text_only": true,
+	"theme_sidebar_indent_top_level_disabled": true,
+	"theme_size_md": true,
+	"theme_tab_arrows_hidden": true,
+	"theme_tab_close_always_visible": true,
+	"theme_unified": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
