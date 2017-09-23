@@ -5,14 +5,9 @@ mkdir ~/Development
 
 sudo apt-get -y install software-properties-common python-software-properties
 
-# Load apt-fast
-#sudo add-apt-repository -y ppa:apt-fast/stable
-#sudo add-apt-repository ppa:webupd8team/sublime-text-3
-#sudo add-apt-repository -y ppa:ys/emojione-picker
 sudo add-apt-repository -y ppa:stebbins/handbrake-releases
 
 sudo apt-get update
-#sudo apt-get install -y apt-fast
 
 echo "Updating Repos"
 
@@ -25,8 +20,6 @@ sudo apt-get install -y preload ubuntu-tweak gdebi tree htop openssh-server git 
 sudo apt-get install -y vlc bleachbit
 
 sudo apt-get install -y chromium-browser
-
-#sudo apt-get install -y emojione-picker
 
 ## Firewall
 sudo apt-get install gufw
