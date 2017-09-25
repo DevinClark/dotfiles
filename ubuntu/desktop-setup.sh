@@ -9,11 +9,9 @@ sudo apt-get -y install software-properties-common python-software-properties
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo add-apt-repository ppa:system76/pop
-#sudo add-apt-repository -y ppa:ys/emojione-picker
-#sudo add-apt-repository -y ppa:stebbins/handbrake-releases
+sudo add-apt-repository -y ppa:stebbins/handbrake-releases
 
-#sudo apt-get update
-#sudo apt-get install -y apt-fast
+sudo apt-get update
 
 echo "Updating Repos"
 
@@ -27,14 +25,11 @@ sudo apt-get install -y preload ubuntu-tweak gdebi tree htop openssh-server git 
 
 sudo apt-get install -y chromium-browser
 
-#sudo apt-get install -y emojione-picker
-
 ## Firewall
-#sudo apt-get install gufw
+sudo apt-get install gufw
 
 echo "Dev Stuff"
 
-#sudo apt-fast install -y sublime-text-installer
 sudo apt-get install -y nginx
 sudo apt-get install sublime-text
 

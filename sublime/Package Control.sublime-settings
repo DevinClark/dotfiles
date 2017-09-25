@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AdvancedNewFile",
 		"Babel",
 		"Boxy Theme",
@@ -12,12 +13,15 @@
 		"DocBlockr",
 		"EditorConfig",
 		"Emmet",
+		"Gofmt",
 		"HyperClick",
 		"Package Control",
 		"PlainTasks",
 		"Pretty JSON",
 		"Protocol Buffer Syntax",
+		"QML",
 		"ReactJS",
+		"Rust Enhanced",
 		"Sass",
 		"Stylus",
 		"SublimeLinter",

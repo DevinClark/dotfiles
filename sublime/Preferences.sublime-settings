@@ -3,11 +3,11 @@
 	[
 		"Techlahoma"
 	],
-	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Nova.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": false,
 	"font_face": "Hack",
-	"font_size": 24,
+	"font_size": 19,
 	"ignored_packages":
 	[
 		"Vintage"
