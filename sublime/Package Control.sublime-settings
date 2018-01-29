@@ -25,7 +25,7 @@
 		"Sass",
 		"Stylus",
 		"SublimeLinter",
-		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-eslint",
 		"SublimeLinter-jsxhint",
 		"Sync Settings",
 		"TabsExtra",
