@@ -13,8 +13,10 @@
 		"DocBlockr",
 		"EditorConfig",
 		"Emmet",
+		"Flow",
 		"Gofmt",
 		"HyperClick",
+		"JsPrettier",
 		"Package Control",
 		"PlainTasks",
 		"Pretty JSON",
@@ -28,7 +30,6 @@
 		"SublimeLinter-eslint",
 		"SublimeLinter-jsxhint",
 		"Sync Settings",
-		"TabsExtra",
 		"tern_for_sublime",
 		"Theme - itg.flat",
 		"Zeus"
