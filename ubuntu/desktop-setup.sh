@@ -29,6 +29,8 @@ echo "Dev Stuff"
 #sudo apt-fast install -y sublime-text-installer
 sudo apt-get install -y nginx
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # codecs
 sudo apt-get install -y handbrake handbrake-cli
 sudo apt-get install -y libxine1-ffmpeg mencoder flac faac faad sox ffmpeg2theora libmpeg2-4 uudeview libmpeg3-1 mpeg3-utils mpegdemux liba52-dev mpeg2dec vorbis-tools id3v2 mpg321 mpg123 libflac++6 totem-mozilla icedax lame libmad0 libjpeg-progs libdvdcss2 libdvdread4 libdvdnav4 libswscale-extra-2 ubuntu-restricted-extras
