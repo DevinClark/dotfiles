@@ -6851,6 +6851,98 @@
         <key>foreground</key>
         <string>#ffffff</string>
     </dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
+</dict><dict>
+<key>name</key>
+<string>CH_color</string>
+<key>scope</key>
+<string>CH_color_494949ff</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#494949ff</string>
+<key>foreground</key>
+<string>#B6B6B6FF</string>
+<key>caret</key>
+<string>#B6B6B6FF</string>
+</dict>
+</dict><dict>
+<key>scope</key>
+<string>CH_text_color_494949ff</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#00000101</string>
+<key>foreground</key>
+<string>#494949ff</string>
+<key>caret</key>
+<string>#B6B6B6FF</string>
+</dict>
+</dict><dict>
+<key>name</key>
+<string>CH_color</string>
+<key>scope</key>
+<string>CH_color_3399ccff</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#3399ccff</string>
+<key>foreground</key>
+<string>#0F2D3DFF</string>
+<key>caret</key>
+<string>#0F2D3DFF</string>
+</dict>
+</dict><dict>
+<key>scope</key>
+<string>CH_text_color_3399ccff</string>
+<key>settings</key>
+<dict>
+<key>background</key>
+<string>#00000101</string>
+<key>foreground</key>
+<string>#3399ccff</string>
+<key>caret</key>
+<string>#0F2D3DFF</string>
+</dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
+</dict><dict>
+    <key>name</key>
+    <string>CH_color_scheme_fix</string>
+    <key>scope</key>
+    <string>ch_gutter_icon</string>
+    <key>settings</key>
+    <dict>
+        <key>foreground</key>
+        <string>#ffffff</string>
+    </dict>
 </dict></array>
 </dict>
 </plist>
