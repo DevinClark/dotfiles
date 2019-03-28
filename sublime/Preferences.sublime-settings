@@ -1,8 +1,11 @@
 {
 	"added_words":
 	[
-		"Techlahoma"
+		"Techlahoma",
+		"fundraising"
 	],
+	"auto_format_on_save": true,
+	"auto_format_on_save_requires_prettier_config": true,
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": false,
@@ -37,12 +40,26 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Hack",
-	"font_size": 20,
+	"font_face": "Fira Code Retina",
+	"font_options":
+	[
+		"dlig",
+		"subpixel_antialias",
+		"no_italic",
+		"gray_antialias"
+	],
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"index_exclude_patterns":
+	[
+		"*.log",
+		"node_modules/**"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"tab_size": 2,

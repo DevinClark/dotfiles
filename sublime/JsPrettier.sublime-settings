@@ -1,5 +1,10 @@
 {
   "debug": false,
   "auto_format_on_save": true,
-  "auto_format_on_save_requires_prettier_config": true
+  "auto_format_on_save_requires_prettier_config": true,
+  "prettier_options": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  }
 }

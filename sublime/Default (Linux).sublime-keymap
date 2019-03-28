@@ -1,0 +1,4 @@
+[
+  { "keys": ["ctrl+up"], "command": "move", "args": {"by": "lines", "forward": false}},
+  { "keys": ["ctrl+down"], "command": "move", "args": {"by": "lines", "forward": true}}
+]
