@@ -8,7 +8,7 @@ export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
 alias os_upgrade="sudo apt update && sudo apt upgrade -y && sudo snap refresh && sudo gem update"
-alias t='tree --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")'
+alias t='tree -a --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")'
 alias ripgrep="rg"
 
 _user_and_host="\[\033[01;32m\]\u@\h"
