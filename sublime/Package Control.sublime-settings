@@ -10,6 +10,7 @@
 		"Babel",
 		"Boxy Theme",
 		"Color Highlighter",
+		"Colorcoder",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
@@ -17,6 +18,7 @@
 		"ElixirSublime",
 		"Emmet",
 		"FlowIDE",
+		"GoDebug",
 		"Gofmt",
 		"HyperClick",
 		"JsPrettier",
@@ -39,6 +41,8 @@
 		"TerminalView",
 		"Terraform",
 		"Theme - itg.flat",
+		"TypeScript Syntax",
+		"TypescriptCompletion",
 		"Zeus"
 	]
 }

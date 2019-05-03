@@ -11,8 +11,6 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo add-apt-repository ppa:system76/pop
 sudo add-apt-repository -y ppa:stebbins/handbrake-releases
 
-sudo apt update
-
 echo "Updating Repos"
 
 sudo apt update
@@ -40,7 +38,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo apt install -y libxine1-ffmpeg mencoder flac faac faad sox ffmpeg2theora libmpeg2-4 uudeview libmpeg3-1 mpeg3-utils mpegdemux liba52-dev mpeg2dec vorbis-tools id3v2 mpg321 mpg123 libflac++6 totem-mozilla icedax lame libmad0 libjpeg-progs libdvdcss2 libdvdread4 libdvdnav4 libswscale-extra-2 ubuntu-restricted-extras
 
 echo "Language Time!"
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
 
 sudo apt install -y golang-go ubuntu-sdk

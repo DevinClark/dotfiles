@@ -6,7 +6,7 @@
 	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/Colorcoder/Monokai (SL) (Colorcoded).tmTheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": false,
 	"file_exclude_patterns":
@@ -48,7 +48,7 @@
 		"no_italic",
 		"gray_antialias"
 	],
-	"font_size": 14,
+	"font_size": 16,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -60,6 +60,7 @@
 	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"original_color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"tab_size": 2,
