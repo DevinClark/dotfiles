@@ -38,7 +38,11 @@
 		".svn",
 		".git",
 		".hg",
-		"CVS"
+		"CVS",
+		"*node_modules/**",
+		"*build/**",
+		"*dist/**",
+		"*__snapshots__/**"
 	],
 	"font_face": "Fira Code Retina",
 	"font_options":
@@ -56,7 +60,10 @@
 	"index_exclude_patterns":
 	[
 		"*.log",
-		"node_modules/**"
+		"*node_modules/**",
+		"*build/**",
+		"*dist/**",
+		"*__snapshots__/**"
 	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,

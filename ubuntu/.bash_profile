@@ -11,16 +11,28 @@ alias os_upgrade="sudo apt update && sudo apt upgrade -y && sudo snap refresh &&
 alias t='tree --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")'
 alias ripgrep="rg"
 
-_user_and_host="\[\033[01;32m\]\u@\h"
-_cur_location="\[\033[01;34m\]\w"
-_colon_separater="\[$(tput setaf 7)\]:"
-_prompt_tail="\[$(tput setaf 7)\]$"
-_last_color="\[$(tput setaf 7)\]"
-#_dot_status="\[$(tput setaf 1)\]•\[$(tput setaf 1)\]"
+function set_prompt() {
+  GIT_PS1_SHOWDIRTYSTATE=true
+  export PS1="\[$(tput setaf 7)\]\u@\h:\w\[$(tput setaf 2)\]\$(__git_ps1)\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
+}
 
-PS1="$_user_and_host$_colon_separater$_cur_location\[$(tput setaf 1)\]\[$(tput setaf 9)\] $_prompt_tail$_last_color "
+if [ -t 0 ]; then
+  set_prompt
+fi
 
 # Create a new directory and enter it
 function md() {
   mkdir -p "$@" && cd "$@"
+}
+
+function my_path() { IFS=":"; for p in $PATH; do echo $p; done }
+
+function cd () {
+  if [[ $# > 0 ]]; then
+    builtin cd "$1"
+  else
+    builtin cd "$@"
+  fi
+
+  ls -a
 }
