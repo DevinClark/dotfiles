@@ -1,0 +1,26 @@
+[user]
+  email = dclarkdesign@gmail.com
+  name = Devin Clark
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[merge]
+  tool = smerge
+[alias]
+  p = push
+  l = pull
+  f = fetch
+  a = add
+  b = branch
+  ba = branch -a
+  aa = add --all
+  amend = commit --amend
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  ff = merge --ff-only
+  lg = log --graph --decorate=full --oneline
+  st = status
