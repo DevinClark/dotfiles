@@ -2,6 +2,7 @@
 echo "Get The Basics"
 
 mkdir ~/Development
+mkdir ~/AppImage
 
 sudo apt -y install software-properties-common python-software-properties
 
