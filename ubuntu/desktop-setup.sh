@@ -5,11 +5,12 @@ mkdir ~/Development
 
 sudo apt -y install software-properties-common python-software-properties
 
-# Load apt-fast
+# PPAs
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo add-apt-repository ppa:system76/pop
 sudo add-apt-repository -y ppa:stebbins/handbrake-releases
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 
 echo "Updating Repos"
 
@@ -17,11 +18,12 @@ sudo apt update
 
 echo "Installing Packages"
 
-sudo apt install -y preload ubuntu-tweak gdebi tree htop openssh-server git curl tig
+sudo apt install -y preload ubuntu-tweak gdebi tree htop openssh-server git curl tig shellcheck ripgrep ubuntu-make
 
 #sudo apt install -y vlc bleachbit
 
 sudo apt install -y chromium-browser
+sudo umake web firefox-dev
 
 ## Firewall
 sudo apt install gufw
@@ -55,13 +57,6 @@ sudo apt install gnome-shell gnome-tweak-tool
 sudo apt install pop-theme
 
 gsettings set org.gnome.desktop.interface clock-format 12h
-
-#sudo apt remove -y unity-lens-shopping
-#sudo apt autoremove unity-lens-shopping
-#sudo apt autoremove unity-lens-music
-#sudo apt autoremove unity-lens-photos
-#sudo apt autoremove unity-lens-gwibber
-#sudo apt autoremove unity-lens-video
 
 echo "Make Sure MySql is Toast"
 sudo update-rc.d mysql remove
