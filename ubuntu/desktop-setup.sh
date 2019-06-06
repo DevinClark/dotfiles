@@ -12,6 +12,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo add-apt-repository ppa:system76/pop
 sudo add-apt-repository -y ppa:stebbins/handbrake-releases
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo add-apt-repository ppa:system76/pop
 
 echo "Updating Repos"
 
@@ -49,6 +50,8 @@ sudo apt install -y golang-go ubuntu-sdk
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
 
 echo "Tweaks"
+
+sudo apt install pop-theme pop-icon-theme
 
 # Normal scrolling
 #sudo gsettings set com.canonical.desktop.interface scrollbar-mode normal
