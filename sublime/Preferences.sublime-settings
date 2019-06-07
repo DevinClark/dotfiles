@@ -6,7 +6,7 @@
 	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
-	"color_scheme": "Packages/Colorcoder/Monokai (SL) (Colorcoded).tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": false,
 	"file_exclude_patterns":
@@ -71,7 +71,7 @@
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"tab_size": 2,
-	"theme": "Boxy Nova.sublime-theme",
+	"theme": "Spacegray Light.sublime-theme",
 	"theme_accent_mono": true,
 	"theme_button_rounded": true,
 	"theme_find_panel_close_hidden": true,
