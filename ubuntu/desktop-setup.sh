@@ -3,16 +3,27 @@ echo "Get The Basics"
 
 mkdir ~/Development
 mkdir ~/AppImage
+touch ~/.local_bashrc
 
 sudo apt -y install software-properties-common
+
+add_ppa() {
+  for i in "$@"; do
+    grep -h "^deb.*$i" /etc/apt/sources.list.d/* > /dev/null 2>&1
+    if [ $? -ne 0 ]
+    then
+      echo "Adding ppa:$i"
+      sudo add-apt-repository -y ppa:$i
+    elsejk
+      echo "ppa:$i already exists"
+    fi
+  done
+}
 
 # PPAs
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo add-apt-repository -y ppa:system76/pop
-sudo add-apt-repository -y ppa:stebbins/handbrake-releases
-sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
-sudo add-apt-repository -y ppa:system76/pop
+add_ppa system76/pop stebbins/handbrake-releases ubuntu-desktop/ubuntu-make
 
 echo "Updating Repos"
 
@@ -20,20 +31,21 @@ sudo apt update
 
 echo "Installing Packages"
 
-sudo apt install -y tree htop git curl tig shellcheck
-sudo apt install -y ubuntu-make
+# make exfat usb drives work
+sudo apt install -y exfat-fuse exfat-utils
+
+sudo apt install -y tree htop git curl tig shellcheck tmux xclip
 
 #sudo apt install -y vlc bleachbit
 
 sudo apt install -y chromium-browser
-sudo umake web firefox-dev --lang en-US
 
 ## Firewall
 sudo apt install -y gufw
 
 echo "Dev Stuff"
 
-sudo apt install -y nginx sublime-text
+sudo apt install -y nginx sublime-text vagrant
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -50,14 +62,16 @@ echo "Language Time!"
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
 
-sudo apt install -y golang-go
+sudo apt install -y golang-go ruby-full
 
 curl https://sh.rustup.rs -sSf | sh
+
+sudo gem install tmuxinator
 
 echo "Tweaks"
 
 # Normal scrolling
-sudo gsettings set com.canonical.desktop.interface scrollbar-mode normal
+# sudo gsettings set com.canonical.desktop.interface scrollbar-mode normal
 
 echo "GNOME"
 sudo apt install -y gnome-shell gnome-tweak-tool pop-gnome-shell-theme

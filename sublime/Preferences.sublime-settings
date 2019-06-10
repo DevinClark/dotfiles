@@ -55,6 +55,7 @@
 	"font_size": 16,
 	"ignored_packages":
 	[
+		"Boxy Theme",
 		"Vintage"
 	],
 	"index_exclude_patterns":
