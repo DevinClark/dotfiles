@@ -131,3 +131,4 @@ if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-clou
 if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-cloud-sdk/completion.bash.inc' ]; then source '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-cloud-sdk/completion.bash.inc'; fi
 
 source ~/.bash_profile
+source ~/.local_bashrc

@@ -5,3 +5,4 @@ ln -s "$(pwd)/ubuntu/.bash_profile" ~/.bash_profile
 ln -s "$(pwd)/ubuntu/.bashrc" ~/.bashrc
 ln -s "$(pwd)/.gitconfig" ~/.gitconfig
 ln -s "$(pwd)/.tmuxinator" ~/.tmuxinator
+ln -s $(pwd)/sublime ~/.config/sublime-text-3/Packages/User

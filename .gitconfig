@@ -6,6 +6,13 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[push]
+  default = current
+[fetch]
+  prune = true
+[core]
+  autocrlf = false
+  ignorecase = false
 [merge]
   tool = smerge
 [alias]
@@ -18,6 +25,7 @@
   aa = add --all
   amend = commit --amend
   ci = commit
+  civ = commit -v
   co = checkout
   di = diff
   dc = diff --cached

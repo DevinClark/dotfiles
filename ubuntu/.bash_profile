@@ -29,10 +29,10 @@ function my_path() { IFS=":"; for p in $PATH; do echo $p; done }
 
 function cd () {
   if [[ $# > 0 ]]; then
-    builtin cd "$1"
+    builtin cd "$1" && ls -a
   else
-    builtin cd "$@"
+    builtin cd "$@" && ls -a
   fi
-
-  ls -a
 }
+
+export PATH="$HOME/.cargo/bin:$PATH"
