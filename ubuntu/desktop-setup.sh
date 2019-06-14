@@ -73,6 +73,8 @@ echo "Tweaks"
 # Normal scrolling
 # sudo gsettings set com.canonical.desktop.interface scrollbar-mode normal
 
+sudo sysctl -w fs.file-max=100000
+
 echo "GNOME"
 sudo apt install -y gnome-shell gnome-tweak-tool pop-gnome-shell-theme
 sudo apt install -y pop-theme pop-icon-theme
