@@ -1,4 +1,8 @@
 {
+	"experimental":
+	{
+		"asynchronosly_update_color_scheme": true
+	},
 	"file_extensions":
 	[
 		"all"
