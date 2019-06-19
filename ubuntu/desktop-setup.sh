@@ -45,7 +45,7 @@ sudo apt install -y gufw
 
 echo "Dev Stuff"
 
-sudo apt install -y nginx sublime-text vagrant
+sudo apt install -y nginx sublime-text vagrant sublime-merge
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -73,11 +73,20 @@ echo "Tweaks"
 # Normal scrolling
 # sudo gsettings set com.canonical.desktop.interface scrollbar-mode normal
 
+sudo sysctl -w fs.file-max=100000
+
+# Make sublime text the default editor
+# https://askubuntu.com/a/227567
+sudo sed -i 's/gedit/sublime_text/g' /etc/gnome/defaults.list
+
 echo "GNOME"
 sudo apt install -y gnome-shell gnome-tweak-tool pop-gnome-shell-theme
 sudo apt install -y pop-theme pop-icon-theme
 
 gsettings set org.gnome.desktop.interface clock-format 12h
+
+snap remove gnome-calculator
+sudo apt install gnome-calculator
 
 echo "Make Sure MySql is Toast"
 sudo update-rc.d mysql remove
