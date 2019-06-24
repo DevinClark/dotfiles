@@ -1,0 +1,3 @@
+{
+  "shell_cmd": "`npm root`/.bin/prettier --write $file"
+}

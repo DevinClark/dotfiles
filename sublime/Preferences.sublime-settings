@@ -8,6 +8,7 @@
 	"auto_format_on_save_requires_prettier_config": true,
 	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"default_line_ending": "unix",
+	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
 	"file_exclude_patterns":
 	[
@@ -51,7 +52,7 @@
 		"subpixel_antialias",
 		"no_italic",
 		"gray_antialias"
-	],  "enable_tab_scrolling": false,
+	],
 	"font_size": 17,
 	"ignored_packages":
 	[
@@ -72,12 +73,12 @@
 	"original_color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"scroll_past_end": true,
 	"show_definitions": false,
+	"spacegray_sidebar_font_xlarge": true,
+	"spacegray_sidebar_tree_xlarge": true,
+	"spacegray_tabs_font_large": true,
+	"spacegray_tabs_large": true,
 	"tab_size": 2,
 	"theme": "Spacegray Light.sublime-theme",
-  "spacegray_tabs_font_large": true,
-  "spacegray_tabs_large": true,
-  "spacegray_sidebar_font_xlarge": true,
-  "spacegray_sidebar_tree_xlarge": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
