@@ -14,7 +14,7 @@ add_ppa() {
     then
       echo "Adding ppa:$i"
       sudo add-apt-repository -y ppa:$i
-    elsejk
+    else
       echo "ppa:$i already exists"
     fi
   done
