@@ -62,9 +62,15 @@ echo "Language Time!"
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
 
-sudo apt install -y golang-go ruby-full
+sudo apt install -y golang-go
 
 curl https://sh.rustup.rs -sSf | sh
+
+gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
+
+rvm install 2.6.3
+rvm --default use 2.6.3
 
 sudo gem install tmuxinator
 
