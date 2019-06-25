@@ -86,6 +86,8 @@ sudo apt install fonts-powerline
 
 gsettings set org.gnome.desktop.interface clock-format 12h
 
+./gnome-terminal-dark-install Default
+
 snap remove gnome-calculator
 sudo apt install gnome-calculator
 

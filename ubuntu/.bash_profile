@@ -12,7 +12,11 @@ alias t='tree -a --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" |
 alias ripgrep="rg"
 
 function set_prompt() {
-  export PS1="\[$(tput setaf 7)\]\u:\w\[$(tput setaf 2)\]\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
+  if [[ -z "${TMUX}" ]]; then
+    export PS1="\[$(tput setaf 7)\]\u:\w\[$(tput setaf 2)\]\$(__git_ps1)\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
+  else
+    export PS1="\[$(tput setaf 7)\]\u:\w\[$(tput setaf 2)\]\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
+  fi
 }
 
 if [ -t 0 ]; then
