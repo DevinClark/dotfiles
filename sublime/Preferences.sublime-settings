@@ -45,7 +45,7 @@
 		"*dist/**",
 		"*__snapshots__/**"
 	],
-	"font_face": "Fira Code Retina",
+	"font_face": "Ubuntu Mono",
 	"font_options":
 	[
 		"dlig",
@@ -67,9 +67,8 @@
 		"*__snapshots__/**",
 		"*coverage/**"
 	],
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
-	"original_color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"spacegray_sidebar_font_xlarge": true,

@@ -82,6 +82,7 @@ sudo sed -i 's/gedit/sublime_text/g' /etc/gnome/defaults.list
 echo "GNOME"
 sudo apt install -y gnome-shell gnome-tweak-tool pop-gnome-shell-theme
 sudo apt install -y pop-theme pop-icon-theme
+sudo apt install fonts-powerline
 
 gsettings set org.gnome.desktop.interface clock-format 12h
 
