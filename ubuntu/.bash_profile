@@ -12,8 +12,7 @@ alias t='tree -a --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" |
 alias ripgrep="rg"
 
 function set_prompt() {
-  GIT_PS1_SHOWDIRTYSTATE=true
-  export PS1="\[$(tput setaf 7)\]\u@\h:\w\[$(tput setaf 2)\]\$(__git_ps1)\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
+  export PS1="\[$(tput setaf 7)\]\u:\w\[$(tput setaf 2)\]\[$(tput setaf 7)\] $ \[$(tput sgr0)\]"
 }
 
 if [ -t 0 ]; then
@@ -22,7 +21,7 @@ fi
 
 # Create a new directory and enter it
 function md() {
-  mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@" || return
 }
 
 function my_path() { IFS=":"; for p in $PATH; do echo $p; done }
