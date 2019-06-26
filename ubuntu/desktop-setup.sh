@@ -56,7 +56,7 @@ rm ripgrep_11.0.1_amd64.deb
 
 # codecs
 #sudo apt install -y handbrake handbrake-cli
-sudo apt install -y libxine1-ffmpeg mencoder flac faac faad sox ffmpeg2theora libmpeg2-4 uudeview libmpeg3-1 mpeg3-utils mpegdemux liba52-dev mpeg2dec vorbis-tools id3v2 mpg321 mpg123 libflac++6 totem-mozilla icedax lame libmad0 libjpeg-progs libdvdcss2 libdvdread4 libdvdnav4 libswscale-extra-2 ubuntu-restricted-extras
+sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly icedax id3v2 lame libdvd-pkg libdvdnav4 libdvdread4 libjpeg-progs libmad0 mencoder mpeg2dec mpeg3-utils mpegdemux mpg123 mpg321 sox ubuntu-restricted-extras uudeview vorbis-tools
 
 echo "Language Time!"
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -92,7 +92,7 @@ sudo apt install fonts-powerline
 
 gsettings set org.gnome.desktop.interface clock-format 12h
 
-./gnome-terminal-dark-install Default
+./gnome-terminal-dark-install.sh Default
 
 snap remove gnome-calculator
 sudo apt install gnome-calculator
