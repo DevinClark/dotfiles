@@ -1,0 +1,58 @@
+﻿{
+  "macro": [
+    {
+      "profileIndex": "1",
+      "sourceKey": 39,
+      "sourceLayer": "INIT",
+      "macroType": "1",
+      "macroRepeat": "2",
+      "setting": {
+        "timer": "10",
+        "layer": "INIT"
+      },
+      "macro": [
+        {
+          "key": "E0",
+          "layer": "INIT",
+          "event": "1",
+          "timer": "10"
+        },
+        {
+          "key": 4,
+          "layer": "INIT",
+          "event": "1",
+          "timer": "10"
+        },
+        {
+          "key": "E0",
+          "layer": "INIT",
+          "event": "0",
+          "timer": "20"
+        },
+        {
+          "key": 4,
+          "layer": "INIT",
+          "event": "0",
+          "timer": "20"
+        }
+      ]
+    }
+  ],
+  "keyChange": [
+    {
+      "profileIndex": "1",
+      "sourceKey": "E2",
+      "sourceLayer": "INIT",
+      "targetKey": "E0",
+      "targetLayer": "INIT"
+    },
+    {
+      "profileIndex": "1",
+      "sourceKey": "E0",
+      "sourceLayer": "INIT",
+      "targetKey": "E2",
+      "targetLayer": "INIT"
+    }
+  ],
+  "functionSet": []
+}
