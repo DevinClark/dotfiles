@@ -32,3 +32,4 @@
   ff = merge --ff-only
   lg = log --graph --decorate=full --oneline
   st = status
+  track = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
