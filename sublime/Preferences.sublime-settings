@@ -53,10 +53,15 @@
 		"no_italic",
 		"gray_antialias"
 	],
-	"font_size": 17,
+	"font_size": 20,
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"index_exclude_patterns":
 	[
@@ -71,6 +76,7 @@
 	"line_padding_top": 3,
 	"scroll_past_end": true,
 	"show_definitions": false,
+	"spacegray_fileicons": true,
 	"spacegray_sidebar_font_xlarge": true,
 	"spacegray_sidebar_tree_xlarge": true,
 	"spacegray_tabs_font_large": true,

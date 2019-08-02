@@ -47,10 +47,18 @@ function md() {
 function my_path() { IFS=":"; for p in $PATH; do echo $p; done }
 
 function cd () {
-  if [[ $# > 0 ]]; then
+  if [[ $# -gt 0 ]]; then
     builtin cd "$1" && ls -a
   else
     builtin cd "$@" && ls -a
+  fi
+}
+
+function g() {
+  if [[ $# -gt 0 ]]; then
+    git "$@"
+  else
+    git status
   fi
 }
 
