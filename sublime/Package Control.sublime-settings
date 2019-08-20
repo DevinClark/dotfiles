@@ -23,7 +23,6 @@
 		"JsPrettier",
 		"nginx",
 		"Package Control",
-		"PlainTasks",
 		"Pretty JSON",
 		"Protocol Buffer Syntax",
 		"QML",
@@ -31,20 +30,14 @@
 		"ReactJS",
 		"Rust Enhanced",
 		"Sass",
-		"Stylus",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-eslint",
-		"SublimeLinter-jsxhint",
 		"SublimeLinter-shellcheck",
-		"Sync Settings",
-		"TerminalView",
 		"Terraform",
-		"Theme - itg.flat",
 		"Theme - Spacegray",
 		"Tmux Syntax Highlight",
 		"TypeScript Syntax",
-		"TypescriptCompletion",
-		"Zeus"
+		"TypescriptCompletion"
 	]
 }

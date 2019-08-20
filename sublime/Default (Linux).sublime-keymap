@@ -1,4 +1,7 @@
 [
   { "keys": ["ctrl+up"], "command": "move", "args": {"by": "lines", "forward": false}},
-  { "keys": ["ctrl+down"], "command": "move", "args": {"by": "lines", "forward": true}}
+  { "keys": ["ctrl+down"], "command": "move", "args": {"by": "lines", "forward": true}},
+  { "keys": ["ctrl+n"], "command": "advanced_new_file_new"},
+  { "keys": ["ctrl+shift+n"], "command": "new_file"},
+  { "keys": ["ctrl+space"], "command": "goto_definition" }
 ]

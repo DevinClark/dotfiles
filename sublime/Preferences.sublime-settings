@@ -4,9 +4,10 @@
 		"Techlahoma",
 		"fundraising"
 	],
+	"always_show_minimap_viewport": false,
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
@@ -54,9 +55,15 @@
 		"gray_antialias"
 	],
 	"font_size": 19,
+	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"index_exclude_patterns":
 	[
@@ -70,7 +77,8 @@
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"scroll_past_end": true,
-	"show_definitions": false,
+	"show_definitions": true,
+	"spacegray_fileicons": true,
 	"spacegray_sidebar_font_xlarge": true,
 	"spacegray_sidebar_tree_xlarge": true,
 	"spacegray_tabs_font_large": true,

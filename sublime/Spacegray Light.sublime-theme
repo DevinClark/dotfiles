@@ -1,0 +1,11 @@
+[
+  {
+    "class": "sidebar_tree",
+    "indent_top_level": true
+  },
+  {
+    "class": "sidebar_heading",
+    "font.size": 12,
+    "color": [140, 145, 156]
+  },
+]
