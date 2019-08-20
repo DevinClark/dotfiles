@@ -42,5 +42,9 @@ windows:
       root: ~/Development/magistrate/js
       panes:
         - npm run example-hapi
+  - rails:
+      root: ~/Development/magistrate/rails-magistrate
   - magistrate:
       root: ~/Development/magistrate/magistrate
+      panes:
+        - PORT=3001 rails s
