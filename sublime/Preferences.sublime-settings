@@ -5,6 +5,7 @@
 		"fundraising"
 	],
 	"always_show_minimap_viewport": false,
+	"auto_complete": false,
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
