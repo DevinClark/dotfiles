@@ -34,7 +34,8 @@
 		"*.psd",
 		"*.db",
 		"*.sublime-workspace",
-		"*.min.js"
+		"*.min.js",
+		"*.snap"
 	],
 	"folder_exclude_patterns":
 	[
@@ -45,7 +46,8 @@
 		"*node_modules/**",
 		"*build/**",
 		"*dist/**",
-		"*__snapshots__/**"
+		"*__snapshots__/**",
+		"*coverage/**"
 	],
 	"font_face": "Ubuntu Mono",
 	"font_options":
