@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+sudo apt update;
+
+sudo apt upgrade -y;
+
+sudo snap refresh;
+
+gem update;
+
+# Update global npm packages to latest version.
+for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f4)
+do
+  sudo npm install -g "$package"
+done

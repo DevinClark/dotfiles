@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
 echo "Get The Basics"
 
 mkdir ~/Development
