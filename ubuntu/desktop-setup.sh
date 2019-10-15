@@ -7,6 +7,7 @@ echo "Get The Basics"
 mkdir ~/Development
 mkdir ~/AppImage
 touch ~/.local_bashrc
+# mkdir ~/npm
 
 sudo apt -y install software-properties-common
 
@@ -64,6 +65,9 @@ sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstrea
 echo "Language Time!"
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
+
+# npm config set -g prefix ~/npm
+npm config set -g save-exact true
 
 sudo apt install -y golang-go
 
