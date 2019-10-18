@@ -13,6 +13,8 @@
 [core]
   autocrlf = false
   ignorecase = false
+[help]
+	autocorrect = 1
 [merge]
   tool = smerge
 [alias]
