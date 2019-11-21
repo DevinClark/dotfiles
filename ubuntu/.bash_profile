@@ -8,7 +8,7 @@ export RIPGREP_CONFIG_PATH="$HOME/Development/dotfiles/.rgrc"
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
-alias os_upgrade="sudo apt update && sudo apt upgrade -y && sudo snap refresh && gem update"
+alias os_upgrade="sudo apt update && sudo apt upgrade -y && sudo apt autoremove && sudo snap refresh && gem update"
 alias t='tree -a --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")'
 alias ripgrep="rg"
 
@@ -63,3 +63,5 @@ function g() {
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="$HOME/.cargo/bin:$PATH"
