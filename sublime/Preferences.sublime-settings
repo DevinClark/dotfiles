@@ -5,6 +5,7 @@
 		"fundraising"
 	],
 	"always_show_minimap_viewport": false,
+	"auto_complete": false,
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
@@ -33,7 +34,8 @@
 		"*.psd",
 		"*.db",
 		"*.sublime-workspace",
-		"*.min.js"
+		"*.min.js",
+		"*.snap"
 	],
 	"folder_exclude_patterns":
 	[
@@ -44,7 +46,8 @@
 		"*node_modules/**",
 		"*build/**",
 		"*dist/**",
-		"*__snapshots__/**"
+		"*__snapshots__/**",
+		"*coverage/**"
 	],
 	"font_face": "Ubuntu Mono",
 	"font_options":

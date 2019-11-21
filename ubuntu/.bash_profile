@@ -8,7 +8,7 @@ export RIPGREP_CONFIG_PATH="$HOME/Development/dotfiles/.rgrc"
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
-alias os_upgrade="sudo apt update && sudo apt upgrade -y && sudo apt autoremove && sudo snap refresh && gem update"
+alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
 alias t='tree -a --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")'
 alias ripgrep="rg"
 
