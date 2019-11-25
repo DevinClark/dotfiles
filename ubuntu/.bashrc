@@ -92,3 +92,5 @@ if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-clou
 source ~/.bash_profile
 source ~/.local_bashrc
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

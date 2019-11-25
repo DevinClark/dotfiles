@@ -57,6 +57,11 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_
 sudo dpkg -i ripgrep_11.0.1_amd64.deb
 rm ripgrep_11.0.1_amd64.deb
 
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+cd ~/.fzf/ && ./install
+
+cd -
 
 # codecs
 #sudo apt install -y handbrake handbrake-cli
