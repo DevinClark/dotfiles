@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euxo pipefail
+
 ln -sf "$(pwd)/.tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/ubuntu/.bash_profile" ~/.bash_profile
 ln -sf "$(pwd)/ubuntu/.bashrc" ~/.bashrc

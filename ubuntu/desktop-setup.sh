@@ -9,7 +9,7 @@ mkdir ~/AppImage
 touch ~/.local_bashrc
 # mkdir ~/npm
 
-sudo apt -y install software-properties-common
+sudo apt -y install software-properties-common wget tar
 
 add_ppa() {
   for i in "$@"; do
@@ -22,6 +22,36 @@ add_ppa() {
       echo "ppa:$i already exists"
     fi
   done
+}
+
+function install_tmux_from_source() {
+  VERSION=$1
+  sudo apt -y install libevent-dev libncurses-dev
+  wget "https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz"
+  tar xf "tmux-${VERSION}.tar.gz"
+  rm -f "tmux-${VERSION}.tar.gz"
+
+  (
+    cd "tmux-${VERSION}"
+    ./configure
+    sudo make install
+  )
+
+  sudo rm -rf /usr/local/src/tmux-*
+  sudo mv "tmux-${VERSION}" /usr/local/src
+}
+
+function install_fzf() {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  (
+    cd ~/.fzf/ && ./install
+  )
+}
+
+function install_ripgrep() {
+  wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
+  sudo dpkg -i ripgrep_11.0.1_amd64.deb
+  rm ripgrep_11.0.1_amd64.deb
 }
 
 # PPAs
@@ -38,7 +68,7 @@ echo "Installing Packages"
 # make exfat usb drives work
 sudo apt install -y exfat-fuse exfat-utils
 
-sudo apt install -y tree htop git curl tig shellcheck tmux xclip urlview
+sudo apt install -y tree htop git curl tig shellcheck xclip urlview
 
 #sudo apt install -y vlc bleachbit
 
@@ -51,17 +81,10 @@ echo "Dev Stuff"
 
 sudo apt install -y nginx sublime-text vagrant sublime-merge
 
+install_tmux_from_source "3.0a"
+install_fzf
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
-sudo dpkg -i ripgrep_11.0.1_amd64.deb
-rm ripgrep_11.0.1_amd64.deb
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-cd ~/.fzf/ && ./install
-
-cd -
 
 # codecs
 #sudo apt install -y handbrake handbrake-cli
