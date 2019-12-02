@@ -95,7 +95,7 @@ echo "Dev Stuff"
 
 sudo apt install -y nginx sublime-text vagrant sublime-merge
 
-# install_tmux_from_source "3.0a"
+install_tmux_from_source "3.0a"
 install_fzf
 install_ripgrep "11.0.2"
 
