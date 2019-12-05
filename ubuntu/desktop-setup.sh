@@ -4,12 +4,11 @@ set -euxo pipefail
 
 echo "Get The Basics"
 
-mkdir ~/Development
-mkdir ~/AppImage
+if [ ! -d ~/AppImage ]; then mkdir ~/AppImage; fi
 touch ~/.local_bashrc
 # mkdir ~/npm
 
-sudo apt -y install software-properties-common
+sudo apt -y install software-properties-common wget tar
 
 add_ppa() {
   for i in "$@"; do
@@ -22,6 +21,51 @@ add_ppa() {
       echo "ppa:$i already exists"
     fi
   done
+}
+
+function clone_or_pull() {
+  REPO=$1
+  DIR=$2
+
+  if [ ! -d "$DIR" ]; then
+    git clone --depth 1 "$REPO" "$DIR"
+  else
+    (
+      cd "$DIR" && git pull
+    )
+  fi
+}
+
+function install_tmux_from_source() {
+  VERSION=$1
+  sudo apt -y install libevent-dev libncurses-dev
+  wget "https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz"
+  tar xf "tmux-${VERSION}.tar.gz"
+  rm -f "tmux-${VERSION}.tar.gz"
+
+  (
+    cd "tmux-${VERSION}"
+    ./configure
+    sudo make install
+  )
+
+  sudo rm -rf /usr/local/src/tmux-*
+  sudo mv "tmux-${VERSION}" /usr/local/src
+}
+
+function install_fzf() {
+  clone_or_pull "https://github.com/junegunn/fzf.git" "$HOME/.fzf"
+
+  (
+    cd ~/.fzf/ && ./install --key-bindings --completion --no-update-rc
+  )
+}
+
+function install_ripgrep() {
+  VERSION=$1
+  wget "https://github.com/BurntSushi/ripgrep/releases/download/${VERSION}/ripgrep_${VERSION}_amd64.deb"
+  sudo dpkg -i "ripgrep_${VERSION}_amd64.deb"
+  rm "ripgrep_${VERSION}_amd64.deb"
 }
 
 # PPAs
@@ -38,7 +82,7 @@ echo "Installing Packages"
 # make exfat usb drives work
 sudo apt install -y exfat-fuse exfat-utils
 
-sudo apt install -y tree htop git curl tig shellcheck tmux xclip urlview
+sudo apt install -y tree htop git curl tig shellcheck xclip urlview
 
 #sudo apt install -y vlc bleachbit
 
@@ -51,12 +95,12 @@ echo "Dev Stuff"
 
 sudo apt install -y nginx sublime-text vagrant sublime-merge
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+install_tmux_from_source "3.0a"
+install_fzf
+install_ripgrep "11.0.2"
 
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
-sudo dpkg -i ripgrep_11.0.1_amd64.deb
-rm ripgrep_11.0.1_amd64.deb
 
+clone_or_pull https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # codecs
 #sudo apt install -y handbrake handbrake-cli
@@ -71,7 +115,8 @@ npm config set -g save-exact true
 
 sudo apt install -y golang-go
 
-curl https://sh.rustup.rs -sSf | sh
+# -s -- allows me to pass args to the piped script.
+curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
 gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles

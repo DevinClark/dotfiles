@@ -5,7 +5,13 @@
 		"fundraising"
 	],
 	"always_show_minimap_viewport": false,
-	"auto_complete": false,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".",
+			"selector": "source.js"
+		}
+	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
@@ -80,7 +86,7 @@
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"scroll_past_end": true,
-	"show_definitions": true,
+	"show_definitions": false,
 	"spacegray_fileicons": true,
 	"spacegray_sidebar_font_xlarge": true,
 	"spacegray_sidebar_tree_xlarge": true,
