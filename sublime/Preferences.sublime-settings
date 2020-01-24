@@ -14,10 +14,14 @@
 	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
+	"bold_folder_labels": true,
+	"caret_style": "solid",
+	"caret_extra_width": 2,
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
+	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -67,8 +71,6 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"zzz A File Icon zzz"
 	],
 	"indent_guide_options":
 	[
@@ -84,8 +86,8 @@
 		"*__snapshots__/**",
 		"*coverage/**"
 	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"spacegray_fileicons": true,
