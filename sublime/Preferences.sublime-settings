@@ -15,8 +15,8 @@
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
 	"bold_folder_labels": true,
-	"caret_style": "solid",
 	"caret_extra_width": 2,
+	"caret_style": "solid",
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
@@ -56,7 +56,7 @@
 		"*node_modules/**",
 		"*build/**",
 		"*dist/**",
-		"*__snapshots__/**",
+		"__snapshots__",
 		"*coverage/**"
 	],
 	"font_face": "Ubuntu Mono",
@@ -83,7 +83,7 @@
 		"*node_modules/**",
 		"*build/**",
 		"*dist/**",
-		"*__snapshots__/**",
+		"__snapshots__",
 		"*coverage/**"
 	],
 	"line_padding_bottom": 4,
