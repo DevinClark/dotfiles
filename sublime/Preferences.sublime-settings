@@ -71,6 +71,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Six",
+		"Vintage",
+		"Vintageous"
 	],
 	"indent_guide_options":
 	[
@@ -88,6 +91,7 @@
 	],
 	"line_padding_bottom": 4,
 	"line_padding_top": 4,
+	"neovintageous_build_version": 11100,
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"spacegray_fileicons": true,
@@ -99,5 +103,8 @@
 	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_super_keys": false,
+	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true
 }

@@ -1,4 +1,11 @@
 {
+  "rules": [
+    {
+      "scope": "highlightedyank",
+      "background": "#e6db74",
+      "foreground": "#272822"
+    }
+  ],
   "globals": {
     "block_caret": "#F9AE58",
   }
