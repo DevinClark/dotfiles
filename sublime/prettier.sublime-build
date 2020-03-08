@@ -1,3 +1,4 @@
 {
-  "shell_cmd": "`npm root`/.bin/prettier --write $file"
+  "shell_cmd": "`npm root`/.bin/prettier --write $file",
+  "quiet": true
 }

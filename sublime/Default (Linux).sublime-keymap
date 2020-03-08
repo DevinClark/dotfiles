@@ -3,5 +3,16 @@
   { "keys": ["ctrl+down"], "command": "move", "args": {"by": "lines", "forward": true}},
   { "keys": ["ctrl+n"], "command": "advanced_new_file_new"},
   { "keys": ["ctrl+shift+n"], "command": "new_file"},
-  { "keys": ["ctrl+space"], "command": "goto_definition" }
+  { "keys": ["ctrl+space"], "command": "goto_definition" },
+  { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+  { "keys": ["ctrl+shift+v"], "command": "paste" },
+
+  {
+    "keys": ["j", "j"],
+    "command": "_enter_normal_mode",
+    "args": {
+      "mode": "mode_insert"
+    },
+    "context": [{"key": "vi_insert_mode_aware"}]
+  }
 ]

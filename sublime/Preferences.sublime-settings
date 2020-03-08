@@ -14,10 +14,14 @@
 	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
+	"bold_folder_labels": true,
+	"caret_extra_width": 2,
+	"caret_style": "solid",
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
+	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -52,7 +56,7 @@
 		"*node_modules/**",
 		"*build/**",
 		"*dist/**",
-		"*__snapshots__/**",
+		"__snapshots__",
 		"*coverage/**"
 	],
 	"font_face": "Ubuntu Mono",
@@ -67,7 +71,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Six",
+		"Vintage",
+		"Vintageous"
 	],
 	"indent_guide_options":
 	[
@@ -80,11 +86,12 @@
 		"*node_modules/**",
 		"*build/**",
 		"*dist/**",
-		"*__snapshots__/**",
+		"__snapshots__",
 		"*coverage/**"
 	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
+	"neovintageous_build_version": 11100,
 	"scroll_past_end": true,
 	"show_definitions": false,
 	"spacegray_fileicons": true,
@@ -96,5 +103,8 @@
 	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_super_keys": false,
+	"vintageous_use_sys_clipboard": true,
 	"word_wrap": true
 }

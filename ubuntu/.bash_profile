@@ -5,6 +5,7 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
 export RIPGREP_CONFIG_PATH="$HOME/Development/dotfiles/.rgrc"
+export DISABLE_AUTO_TITLE=true
 
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
