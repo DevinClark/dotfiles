@@ -60,7 +60,7 @@
       "KC_DOT",
       "KC_SLSH",
       "KC_RSPC",
-      "KC_APP",
+      "KC_BSLS",
       "ANY(KC__MUTE)",
       "ANY(KC__VOLDOWN)",
       "ANY(KC__VOLUP)",

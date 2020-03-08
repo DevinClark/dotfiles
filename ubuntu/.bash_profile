@@ -6,6 +6,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
 export RIPGREP_CONFIG_PATH="$HOME/Development/dotfiles/.rgrc"
 
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
 alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
