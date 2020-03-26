@@ -1,0 +1,8 @@
+[
+    {
+        "caption": "Copy Full Path",
+        "mnemonic": "y",
+        "command": "copy_path",
+        "args": {"paths": []}
+    }
+]

@@ -19,6 +19,8 @@
 		"Gofmt",
 		"HyperClick",
 		"JsPrettier",
+		"LSP",
+		"LSP-eslint",
 		"Naomi",
 		"NeoVintageous",
 		"nginx",

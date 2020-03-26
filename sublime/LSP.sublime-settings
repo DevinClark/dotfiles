@@ -1,0 +1,46 @@
+{
+	"clients":
+	{
+		"bashls":
+		{
+			"enabled": true
+		},
+		"eslint":
+		{
+			"enabled": true,
+			"syntaxes":
+			[
+				"Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax"
+			]
+		},
+		"flow":
+		{
+			"enabled": true
+		},
+		"javascript-typescript-langserver":
+		{
+			"enabled": true,
+			"syntaxes":
+			[
+				"Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax"
+			]
+		},
+		"typescript-language-server":
+		{
+			"enabled": true,
+			"syntaxes":
+			[
+				"Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax"
+			]
+		}
+	},
+	"languages":
+	[
+		{
+			"languageId": "javascript",
+			"syntaxes":
+			[
+			]
+		}
+	]
+}
