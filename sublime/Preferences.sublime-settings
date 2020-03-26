@@ -57,7 +57,10 @@
 		"*build/**",
 		"*dist/**",
 		"__snapshots__",
-		"*coverage/**"
+		"*coverage",
+		".rts2_cache_cjs",
+		".rts2_cache_es",
+		".rts2_cache_umd"
 	],
 	"font_face": "Ubuntu Mono",
 	"font_options":
