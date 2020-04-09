@@ -13,7 +13,6 @@
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"Emmet",
-		"FlowIDE",
 		"Focus File on Sidebar",
 		"GoDebug",
 		"Gofmt",
@@ -38,12 +37,12 @@
 		"SublimeLinter",
 		"SublimeLinter-eslint",
 		"SublimeLinter-shellcheck",
+		"Svelte",
 		"Syntax Highlighting for PostCSS",
 		"Terraform",
 		"Theme - Spacegray",
 		"Tmux Syntax Highlight",
 		"TypeScript",
-		"TypeScript Syntax",
-		"TypescriptCompletion"
+		"TypeScript Syntax"
 	]
 }

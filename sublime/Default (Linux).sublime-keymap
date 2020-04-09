@@ -3,7 +3,7 @@
   { "keys": ["ctrl+down"], "command": "move", "args": {"by": "lines", "forward": true}},
   { "keys": ["ctrl+n"], "command": "advanced_new_file_new"},
   { "keys": ["ctrl+shift+n"], "command": "new_file"},
-  { "keys": ["ctrl+space"], "command": "goto_definition" },
+  { "keys": ["ctrl+space"], "command": "lsp_symbol_implementation", "context": [{"key": "setting.lsp_active"}] },
   { "keys": ["ctrl+v"], "command": "paste_and_indent" },
   { "keys": ["ctrl+shift+v"], "command": "paste" },
 
