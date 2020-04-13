@@ -106,8 +106,8 @@
 	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_super_keys": false,
-	"vintageous_reset_mode_when_switching_tabs": false,
 	"word_wrap": true
 }
