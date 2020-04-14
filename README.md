@@ -1,9 +1,9 @@
 # Table of Contents
 
-* [#install](Install)
-* [#tmux](Tmux)
-* [#(sublime-text)](Sublime Text)
-* [#bin](Bin)
+* [Install](#install)
+* [Tmux](#tmux)
+* [Sublime Text)](#sublime-text)
+* [Bin](#bin)
 
 # Install
 
