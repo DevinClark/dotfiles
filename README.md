@@ -2,7 +2,7 @@
 
 * [#install](Install)
 * [#tmux](Tmux)
-* [#(sublime-text)](Sublime Text)
+* [#sublime-text](Sublime Text)
 * [#bin](Bin)
 
 # Install
