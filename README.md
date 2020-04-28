@@ -16,8 +16,10 @@
 
 | Key | Function |
 | --- | -------- |
-| os_upgrade | updates aptitude, snap, global npm, and ruby packages |
-
+| `os_upgrade` | updates aptitude, snap, global npm, and ruby packages |
+| `md` | makes a directory and moves into it |
+| `my_path` | outputs all the directories on my $PATH |
+| `g` | alias for git |
 # Tmux
 
 ## Default
