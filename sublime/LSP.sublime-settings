@@ -25,6 +25,10 @@
 				"Packages/Naomi/syntaxes/naomi.fjsx15.sublime-syntax"
 			]
 		},
+		"lsp-tsserver":
+		{
+			"enabled": true
+		},
 		"typescript-language-server":
 		{
 			"enabled": true,

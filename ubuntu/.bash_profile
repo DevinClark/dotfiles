@@ -14,7 +14,7 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
 alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
-alias t='tree -a --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")'
+alias t='tree -a --prune -I $([ -f ~/.fzf.bash ] && $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|"))'
 alias ripgrep="rg"
 
 function set_prompt() {
