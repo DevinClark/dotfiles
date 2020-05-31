@@ -86,7 +86,7 @@ sudo apt install -y tree htop git curl tig shellcheck xclip urlview
 
 #sudo apt install -y vlc bleachbit
 
-sudo apt install -y chromium-browser
+#sudo apt install -y chromium-browser
 
 ## Firewall
 sudo apt install -y gufw
@@ -104,13 +104,14 @@ clone_or_pull https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # codecs
 #sudo apt install -y handbrake handbrake-cli
-sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly icedax id3v2 lame libdvd-pkg libdvdnav4 libdvdread4 libjpeg-progs libmad0 mencoder mpeg2dec mpeg3-utils mpegdemux mpg123 mpg321 sox ubuntu-restricted-extras uudeview vorbis-tools
+sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly icedax id3v2 lame libdvd-pkg libdvdnav4 libjpeg-progs libmad0 mencoder mpeg2dec mpeg3-utils mpegdemux mpg123 mpg321 sox ubuntu-restricted-extras uudeview vorbis-tools
+sudo dpkg-reconfigure libdvd-pkg
 
 echo "Language Time!"
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install -y nodejs
 
-# npm config set -g prefix ~/npm
+npm config set -g prefix ~/npm
 npm config set -g save-exact true
 
 sudo apt install -y golang-go
@@ -121,10 +122,12 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
 
-sudo usermod -a -G rvm "$USER"
+# sudo usermod -a -G rvm "$USER"
 
-rvm install 2.6.3
-rvm --default use 2.6.3
+source /home/dddev/.rvm/scripts/rvm
+
+rvm install 2.7.1
+rvm --default use 2.7.1
 
 sudo gem install tmuxinator
 
