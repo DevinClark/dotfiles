@@ -82,7 +82,7 @@ echo "Installing Packages"
 # make exfat usb drives work
 sudo apt install -y exfat-fuse exfat-utils
 
-sudo apt install -y tree htop git curl tig shellcheck xclip urlview
+sudo apt install -y tree htop git curl tig shellcheck xclip urlview entr
 
 #sudo apt install -y vlc bleachbit
 
