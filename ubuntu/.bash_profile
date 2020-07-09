@@ -49,7 +49,12 @@ function md() {
   mkdir -p "$@" && cd "$@" || return
 }
 
-function my_path() { IFS=":"; for p in $PATH; do echo $p; done }
+function my_path() {
+  IFS=":";
+  for p in $PATH;
+    do echo $p;
+  done
+}
 
 function cd () {
   if [[ $# -gt 0 ]]; then

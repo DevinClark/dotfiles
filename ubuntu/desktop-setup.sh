@@ -142,6 +142,8 @@ sudo sysctl -w fs.file-max=100000
 # https://askubuntu.com/a/227567
 sudo sed -i 's/gedit/sublime_text/g' /etc/gnome/defaults.list
 
+npm install -g typescript-language-server bash-language-server vscode-css-languageserver-bin dockerfile-language-server-nodejs nodemon
+
 echo "GNOME"
 sudo apt install -y gnome-shell gnome-tweak-tool pop-gnome-shell-theme
 sudo apt install -y pop-theme pop-icon-theme
@@ -157,6 +159,10 @@ sudo apt install gnome-calculator
 echo "Make Sure MySql is Toast"
 sudo update-rc.d mysql remove
 sudo update-rc.d apache2 remove
+sudo apt install postgresql postgresql-contrib libpq-dev
+
+sudo systemctl start postgresql@12-main
+pg_ctlcluster 12 main start
 
 echo "Clean Up"
 sudo apt upgrade -y
