@@ -16,6 +16,7 @@ alias pbpaste='xclip -o'
 alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
 alias t='tree -a --prune -I $([ -f ~/.fzf.bash ] && $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|"))'
 alias ripgrep="rg"
+alias ga="git_add_fzf"
 
 function set_prompt() {
   PS1_USERNAME="\u"
@@ -44,12 +45,31 @@ if [ -t 0 ]; then
   set_prompt
 fi
 
+function git_add_fzf() {
+  local files
+
+  files=$(
+    git -c color.status=always status --short |
+    fzf-tmux -m --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' --ansi | cut -c2- | sed "s/.* //"
+  )
+
+  for f in $files; do
+    git add $f
+    echo "Staged $f"
+  done
+}
+
 # Create a new directory and enter it
 function md() {
   mkdir -p "$@" && cd "$@" || return
 }
 
-function my_path() { IFS=":"; for p in $PATH; do echo $p; done }
+function my_path() {
+  IFS=":";
+  for p in $PATH;
+    do echo $p;
+  done
+}
 
 function cd () {
   if [[ $# -gt 0 ]]; then
