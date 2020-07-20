@@ -7,6 +7,9 @@ ln -sf "$(pwd)/ubuntu/.bash_profile" ~/.bash_profile
 ln -sf "$(pwd)/ubuntu/.bashrc" ~/.bashrc
 ln -sf "$(pwd)/.gitconfig" ~/.gitconfig
 
+mkdir -p ~/.config/nvim
+ln -sf "$(pwd)/.vimrc" ~/.config/nvim/init.vim
+
 # Check to make sure directory does not already exist
 # before creating a symlink for it. This prevents a
 # looping issue with directory symlinks.

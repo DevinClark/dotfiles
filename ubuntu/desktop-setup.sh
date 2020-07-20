@@ -93,7 +93,14 @@ sudo apt install -y gufw
 
 echo "Dev Stuff"
 
-sudo apt install -y nginx sublime-text vagrant sublime-merge
+sudo apt install -y nginx sublime-text vagrant sublime-merge neovim
+
+sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+sudo update-alternatives --config vi
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+sudo update-alternatives --config vim
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+sudo update-alternatives --config editor
 
 install_tmux_from_source "3.0a"
 install_fzf

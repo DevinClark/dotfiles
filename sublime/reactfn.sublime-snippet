@@ -13,6 +13,6 @@ $1.propTypes = {};
 
 ]]></content>
     <tabTrigger>reactfn</tabTrigger>
-    <scope>source.js</scope>
+    <scope>source.js | source.ts | source.jsx | source.tsx</scope>
     <description>function React component</description>
 </snippet>
