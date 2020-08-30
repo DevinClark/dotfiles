@@ -1,6 +1,21 @@
+
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync
+endif
+
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
+call plug#begin('~/.config/nvim/plugged')
+
 set spell
 
 set nocompatible
+filetype plugin on " Enable filetype-specific settings.
+syntax on " Enable syntax highlighting.
 
 set autoread " detect when a file is changed
 
@@ -61,6 +76,7 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
   set columns=100 " size of the editable area
   set noruler " don't show ruler
   set linebreak " break the lines on words
+  set scrolloff=5
 
 " }}}
 
@@ -88,4 +104,114 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
     autocmd BufWritePost .vimrc.local source %
 
   augroup END
+
+  augroup markdown
+    autocmd!
+
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
+    autocmd FileType markdown,mkd,text call Prose()
+    autocmd FileType markdown setlocal spell spelllang=en_us
+  augroup END
+
+  function! Prose()
+    colorscheme pencil
+    set background=dark
+    call pencil#init()
+  endfunction
+
 " }}}
+
+" Store temporary files in ~/.vim/tmp
+set viminfo+=n~/.vim/tmp/viminfo
+set backupdir=$HOME/.vim/tmp/backup
+set dir=$HOME/.vim/tmp/swap
+set viewdir=$HOME/.vim/tmp/view
+if !isdirectory(&backupdir) | call mkdir(&backupdir, 'p', 0700) | endif
+if !isdirectory(&dir)       | call mkdir(&dir, 'p', 0700)       | endif
+if !isdirectory(&viewdir)   | call mkdir(&viewdir, 'p', 0700)   | endif
+
+" Persist undo history between Vim sessions.
+if has('persistent_undo')
+  set undodir=$HOME/.vim/tmp/undo
+  if !isdirectory(&undodir) | call mkdir(&undodir, 'p', 0700) | endif
+endif
+
+" {{{ General Plugins
+  Plug 'reedes/vim-pencil'
+  let g:pencil#wrapModeDefault = 'soft'
+
+  Plug 'junegunn/limelight.vim'
+
+  Plug 'reedes/vim-colors-pencil'
+
+  Plug 'niftylettuce/vim-jinja'
+
+  Plug 'plasticboy/vim-markdown'
+  let g:vim_markdown_conceal = 2
+  let g:vim_markdown_conceal_code_blocks = 0
+  let g:vim_markdown_math = 1
+  let g:vim_markdown_toml_frontmatter = 1
+  let g:vim_markdown_frontmatter = 1
+  let g:vim_markdown_frontmatter = 1
+  let g:vim_markdown_strikethrough = 1
+  let g:vim_markdown_autowrite = 1
+  let g:vim_markdown_edit_url_in = 'tab'
+  let g:vim_markdown_follow_anchor = 1
+
+  Plug 'benmills/vimux'
+
+" }}}
+
+" {{{ Startupify
+  Plug 'tpope/vim-fugitive'
+  Plug 'mhinz/vim-startify'
+
+  " Don't change to directory when selecting a file
+  let g:startify_files_number = 5
+  let g:startify_change_to_dir = 0
+  let g:startify_custom_header = [ ]
+  let g:startify_relative_path = 1
+  let g:startify_use_env = 1
+
+  " returns all modified files of the current git repo
+  " `2>/dev/null` makes the command fail quietly, so that when we are not
+  " in a git repo, the list will be empty
+  function! s:gitModified()
+      let files = systemlist('git ls-files -m 2>/dev/null')
+      return map(files, "{'line': v:val, 'path': v:val}")
+  endfunction
+
+  " same as above, but show untracked files, honouring .gitignore
+  function! s:gitUntracked()
+      let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+      return map(files, "{'line': v:val, 'path': v:val}")
+  endfunction
+
+  " Custom startup list, only show MRU from current directory/project
+  let g:startify_lists = [
+  \  { 'type': 'dir',       'header': [ ' Files '. getcwd() ] },
+  \  { 'type': 'sessions',  'header': [ ' Sessions' ]       },
+  \  { 'type': 'bookmarks', 'header': [ ' Bookmarks' ]      },
+  \ { 'type': function('s:gitModified'),  'header': [' Git modified']},
+  \ { 'type': function('s:gitUntracked'), 'header': [' Git untracked']},
+  \  { 'type': 'commands',  'header': [ ' Commands' ]       },
+  \ ]
+
+  let g:startify_commands = [
+  \   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
+  \   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
+  \ ]
+
+  let g:startify_bookmarks = [
+      \ { 'c': '~/.config/nvim/init.vim' },
+      \ { 'g': '~/.gitconfig' },
+      \ { 'z': '~/.zshrc' }
+  \ ]
+
+  autocmd User Startified setlocal cursorline
+  nmap <leader>st :Startify<cr>
+
+" }}}
+
+
+call plug#end()
