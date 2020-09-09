@@ -72,6 +72,8 @@ function install_ripgrep() {
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 add_ppa system76/pop stebbins/handbrake-releases ubuntu-desktop/ubuntu-make
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+add_ppa "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 echo "Updating Repos"
 

@@ -74,7 +74,7 @@
 		"no_italic",
 		"gray_antialias"
 	],
-	"font_size": 20,
+	"font_size": 18,
 	"highlight_line": true,
 	"ignored_packages":
 	[
