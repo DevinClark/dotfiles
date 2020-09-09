@@ -10,6 +10,10 @@
 		{
 			"characters": ".",
 			"selector": "source.js"
+		},
+		{
+			"characters": "/",
+			"selector": "string.quoted.double.html,string.quoted.single.html, source.css"
 		}
 	],
 	"auto_format_on_save": true,

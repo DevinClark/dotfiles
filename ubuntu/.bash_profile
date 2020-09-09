@@ -1,5 +1,5 @@
 export GOPATH="$HOME/gopath"
-export PATH="$HOME/.go/bin:$HOME/gopath/bin:$HOME/gopath:$HOME/.npm-global/bin:$HOME/AppImage:$HOME/.rvm/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.go/bin:$HOME/gopath/bin:$HOME/gopath:$HOME/.npm-global/bin:$HOME/AppImage:$HOME/.rvm/bin:$HOME/.cargo/bin:$HOME/Development/dotfiles/bin:$PATH"
 export EDITOR="subl -w"
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true

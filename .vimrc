@@ -89,3 +89,5 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
 
   augroup END
 " }}}
+
+source ~/Development/dotfiles/vim/theme.vim

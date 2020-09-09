@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -Eeo pipefail
+
+# bail if we're already inside a TMUX session
+[ "$TMUX" == "" ] || exit 0
+
+# tmuxinator_projects=($(IFS=$'\n' tmuxinator list --newline))
+
+# present menu for user to choose which workspace to open
+options=("blank" "tmuxinator" $(IFS=$'\n' tmux list-sessions -F "#S" 2>/dev/null))
+
+opt=$(printf '%s\n' "${options[@]}" | fzf --no-sort --cycle --no-info --no-multi --height "30%" --prompt "Session Name: ")
+
+echo $status
+
+case $opt in
+  "")
+    exit 0
+    ;;
+  "blank")
+    read -rp "Enter new session name: " SESSION_NAME
+    tmux new -s "$SESSION_NAME"
+    ;;
+
+  "tmuxinator")
+    read -rp "Enter tmuxinator project name: " SESSION_NAME
+    tmuxinator start "$SESSION_NAME"
+    ;;
+
+  *)
+    tmux attach-session -t "$opt"
+    ;;
+esac
