@@ -1,5 +1,5 @@
 export GOPATH="$HOME/gopath"
-export PATH="$HOME/.go/bin:$HOME/gopath/bin:$HOME/gopath:$HOME/.npm-global/bin:$HOME/AppImage:$HOME/.rvm/bin:$HOME/.cargo/bin:$HOME/Development/dotfiles/bin:$PATH"
+export PATH="$PATH:$HOME/.go/bin:$HOME/gopath/bin:$HOME/gopath:$HOME/.npm-global/bin:$HOME/AppImage:$HOME/.rvm/bin:$HOME/.cargo/bin:$HOME/Development/dotfiles/bin:$HOME/.rvm/bin"
 export EDITOR="subl -w"
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -89,4 +89,3 @@ function g() {
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export PATH="$HOME/.cargo/bin:$PATH"

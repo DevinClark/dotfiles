@@ -23,7 +23,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=10000
-export HISTFILESIZE=20000
+export HISTFILESIZE=50000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -94,6 +94,3 @@ source ~/.local_bashrc
 source $HOME/.cargo/env
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
