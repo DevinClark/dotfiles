@@ -20,6 +20,10 @@
 | `md` | makes a directory and moves into it |
 | `my_path` | outputs all the directories on my $PATH |
 | `g` | alias for git |
+| `extract` | extracts just about any compressed file |
+| `o` | opens a directory |
+| `tm` | utility for creating and connecting to tmux sessions |
+
 # Tmux
 
 ## Default
@@ -28,6 +32,8 @@
 | --- | -------- |
 | z | expand pane to full size |
 | ? | show all tmux commands |
+| " | split pane horizontally |
+| % | split pane vertically |
 
 ## Custom
 
