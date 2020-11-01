@@ -68,6 +68,15 @@ function install_ripgrep() {
   rm "ripgrep_${VERSION}_amd64.deb"
 }
 
+function install_nodejs() {
+  VERSION="${1:-14}"
+  curl -sL "https://deb.nodesource.com/setup_${VERSION}.x" | sudo -E bash -
+  sudo apt install -y nodejs
+
+  npm config set -g prefix ~/npm
+  npm config set -g save-exact true
+}
+
 # PPAs
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -117,11 +126,7 @@ sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstrea
 sudo dpkg-reconfigure libdvd-pkg
 
 echo "Language Time!"
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt install -y nodejs
-
-npm config set -g prefix ~/npm
-npm config set -g save-exact true
+install_nodejs
 
 sudo apt install -y golang-go
 
