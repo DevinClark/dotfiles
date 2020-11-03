@@ -3,8 +3,8 @@
 set -euxo pipefail
 
 ln -sf "$(pwd)/.tmux.conf" ~/.tmux.conf
-ln -sf "$(pwd)/ubuntu/.bash_profile" ~/.bash_profile
 ln -sf "$(pwd)/ubuntu/.bashrc" ~/.bashrc
+ln -sf "$(pwd)/ubuntu/.bash_aliases" ~/.bash_aliases
 ln -sf "$(pwd)/.gitconfig" ~/.gitconfig
 
 mkdir -p ~/.config/nvim
