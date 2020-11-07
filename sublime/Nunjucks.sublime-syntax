@@ -289,6 +289,8 @@ contexts:
       captures:
         1: punctuation.definition.entity.html
         3: punctuation.definition.entity.html
+    - match: "&[a-zA-Z0-9]+"
+      scope: string.quoted.double.html
     - match: "&"
       scope: invalid.illegal.bad-ampersand.html
   php:
