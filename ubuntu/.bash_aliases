@@ -5,7 +5,6 @@ alias t='tree -a --prune -I $([ -f ~/.fzf.bash ] && $(cat .gitignore | egrep -v 
 alias ripgrep="rg"
 alias ga="git_add_fzf"
 
-# some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -13,6 +12,23 @@ alias mux='tmuxinator'
 alias g='git'
 alias c='clear'
 alias cd='cdls'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Convert git aliases to short commands. Also runs `git status` after.
+# Ex. `gciv` instead of `git civ`
+git_aliases() {
+  IFS=$'\n'
+  for i in $(git config --get-regexp "alias."); do
+    IFS=$'\n' read -d "" -ra arr <<< "${i// /$'\n'}"
+    local name=${arr[0]/alias./}
+    alias "g$name= git $name; git st"
+  done
+}
+
+git_aliases
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
