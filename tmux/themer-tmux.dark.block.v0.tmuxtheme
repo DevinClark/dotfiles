@@ -9,6 +9,9 @@
 # https://github.com/Lokaltog/powerline-fonts
 #
 
+# set -g window-style 'fg=default,bg=default'
+# set -g window-active-style 'fg=default,bg=#3c3f42'
+
 # Status update interval
 set -g status-interval 1
 
