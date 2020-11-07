@@ -9,7 +9,7 @@ case $- in
 esac
 
 if [[ -e ~/.ssh/known_hosts ]]; then
-  complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
+  complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp mosh
 fi
 
 # Don't put things above this line.
@@ -56,7 +56,7 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
-function set_prompt() {
+set_prompt() {
   PS1_USERNAME="\u"
   PS1_PWD="\w"
   PS1_IS_ROOT="\$"
@@ -83,7 +83,7 @@ if [ -t 0 ]; then
   set_prompt
 fi
 
-function git_add_fzf() {
+git_add_fzf() {
   local files
 
   files=$(
@@ -98,11 +98,11 @@ function git_add_fzf() {
 }
 
 # Create a new directory and enter it
-function md() {
+md() {
   mkdir -p "$@" && cd "$@" || return
 }
 
-function my_path() {
+my_path() {
   IFS=":";
   for p in $PATH;
     do echo $p;
@@ -118,7 +118,7 @@ cdls() {
   fi
 }
 
-function g() {
+g() {
   if [[ $# -gt 0 ]]; then
     git "$@"
   else
