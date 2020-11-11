@@ -3,13 +3,12 @@ alias pbpaste='xclip -o'
 alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
 alias t='tree -a --prune -I $([ -f ~/.fzf.bash ] && $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|"))'
 alias ripgrep="rg"
-alias ga="git_add_fzf"
 
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias mux='tmuxinator'
-alias g='git'
+alias g='git status'
 alias c='clear'
 alias cd='cdls'
 alias ..="cd .."
