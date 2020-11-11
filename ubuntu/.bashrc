@@ -14,7 +14,6 @@ fi
 
 # Don't put things above this line.
 
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -110,11 +109,10 @@ my_path() {
 }
 
 cdls() {
-  echo "test"
   if [[ $# -gt 0 ]]; then
-    builtin cd "$1" && ls -a
+    builtin cd "$1"; ls -a
   else
-    builtin cd "$@" && ls -a
+    builtin cd "$@"; ls -a
   fi
 }
 
@@ -150,4 +148,3 @@ if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-clou
 
 source ~/.local_bashrc
 source $HOME/.cargo/env
-
