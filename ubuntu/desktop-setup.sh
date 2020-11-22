@@ -5,12 +5,12 @@ set -euxo pipefail
 echo "Get The Basics"
 
 if [ ! -d ~/AppImage ]; then mkdir ~/AppImage; fi
+if [ ! -d ~/npm ]; then mkdir ~/npm; fi
 touch ~/.local_bashrc
-# mkdir ~/npm
 
 sudo apt -y install software-properties-common wget tar
 
-add_ppa() {
+function add_ppa() {
   for i in "$@"; do
     grep -h "^deb.*$i" /etc/apt/sources.list.d/* > /dev/null 2>&1
     if [ $? -ne 0 ]
@@ -77,9 +77,48 @@ function install_nodejs() {
   npm config set -g save-exact true
 }
 
+function install_go() {
+  sudo apt install -y golang-go
+}
+
+function install_rust() {
+  # -s -- allows me to pass args to the piped script.
+  curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+}
+
+function install_ruby() {
+  gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
+
+  sudo usermod -a -G rvm "$USER"
+
+  source ~/.rvm/scripts/rvm
+
+  rvm install "$1"
+  rvm --default use "$1"
+}
+
+function install_postgres() {
+  sudo update-rc.d mysql remove
+  sudo update-rc.d apache2 remove
+  sudo apt install postgresql postgresql-contrib libpq-dev
+
+  sudo systemctl start postgresql@13-main
+  pg_ctlcluster 13 main start
+}
+
+function install_sublime_text() {
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+  sudo apt install -y sublime-text sublime-merge
+
+  # Make sublime text the default editor
+  # https://askubuntu.com/a/227567
+  sudo sed -i 's/gedit/sublime_text/g' /etc/gnome/defaults.list
+}
+
 # PPAs
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 add_ppa system76/pop stebbins/handbrake-releases ubuntu-desktop/ubuntu-make
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 add_ppa "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
@@ -93,7 +132,7 @@ echo "Installing Packages"
 # make exfat usb drives work
 sudo apt install -y exfat-fuse exfat-utils
 
-sudo apt install -y tree htop git curl tig shellcheck xclip urlview entr
+sudo apt install -y tree htop git curl tig shellcheck xclip urlview entr fd-find
 
 #sudo apt install -y vlc bleachbit
 
@@ -104,7 +143,8 @@ sudo apt install -y gufw
 
 echo "Dev Stuff"
 
-sudo apt install -y nginx sublime-text vagrant sublime-merge neovim
+install_sublime_text
+sudo apt install -y nginx vagrant neovim
 
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 sudo update-alternatives --config vi
@@ -117,46 +157,31 @@ install_tmux_from_source "3.0a"
 install_fzf
 install_ripgrep "11.0.2"
 
-
 clone_or_pull https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# codecs
-#sudo apt install -y handbrake handbrake-cli
-sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly icedax id3v2 lame libdvd-pkg libdvdnav4 libjpeg-progs libmad0 mencoder mpeg2dec mpeg3-utils mpegdemux mpg123 mpg321 sox ubuntu-restricted-extras uudeview vorbis-tools
-sudo dpkg-reconfigure libdvd-pkg
+function install_codecs() {
+  #sudo apt install -y handbrake handbrake-cli
+  sudo apt install -y faac faad ffmpeg2theora flac gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly icedax id3v2 lame libdvd-pkg libdvdnav4 libjpeg-progs libmad0 mencoder mpeg2dec mpeg3-utils mpegdemux mpg123 mpg321 sox ubuntu-restricted-extras uudeview vorbis-tools
+  sudo dpkg-reconfigure libdvd-pkg
+}
+
+# install_codecs
 
 echo "Language Time!"
 install_nodejs
-
-sudo apt install -y golang-go
-
-# -s -- allows me to pass args to the piped script.
-curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-
-gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
-
-# sudo usermod -a -G rvm "$USER"
-
-source /home/dddev/.rvm/scripts/rvm
-
-rvm install 2.7.1
-rvm --default use 2.7.1
+install_go
+install_rust
+install_ruby "2.7.1"
 
 sudo gem install tmuxinator
 
-echo "Tweaks"
+install_postgres
 
-# Normal scrolling
-# sudo gsettings set com.canonical.desktop.interface scrollbar-mode normal
+echo "Tweaks"
 
 sudo sysctl -w fs.file-max=100000
 
-# Make sublime text the default editor
-# https://askubuntu.com/a/227567
-sudo sed -i 's/gedit/sublime_text/g' /etc/gnome/defaults.list
-
-npm install -g typescript-language-server bash-language-server vscode-css-languageserver-bin dockerfile-language-server-nodejs nodemon
+npm install -g typescript-language-server bash-language-server vscode-css-languageserver-bin dockerfile-language-server-nodejs nodemon serve
 
 echo "GNOME"
 sudo apt install -y gnome-shell gnome-tweak-tool pop-gnome-shell-theme
@@ -170,17 +195,12 @@ gsettings set org.gnome.desktop.interface clock-format 12h
 snap remove gnome-calculator
 sudo apt install gnome-calculator
 
-echo "Make Sure MySql is Toast"
-sudo update-rc.d mysql remove
-sudo update-rc.d apache2 remove
-sudo apt install postgresql postgresql-contrib libpq-dev
-
-sudo systemctl start postgresql@12-main
-pg_ctlcluster 12 main start
 
 echo "Clean Up"
 sudo apt upgrade -y
-sudo apt autoremove -y && sudo apt -y autoclean && sudo apt -y clean
+sudo apt autoremove -y
+sudo apt -y autoclean
+sudo apt -y clean
 
 echo "Done!"
 exit 0

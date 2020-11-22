@@ -82,20 +82,6 @@ if [ -t 0 ]; then
   set_prompt
 fi
 
-git_add_fzf() {
-  local files
-
-  files=$(
-    git -c color.status=always status --short |
-    fzf-tmux -m --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' --ansi | cut -c2- | sed "s/.* //"
-  )
-
-  for f in $files; do
-    git add $f
-    echo "Staged $f"
-  done
-}
-
 # Create a new directory and enter it
 md() {
   mkdir -p "$@" && cd "$@" || return
@@ -138,6 +124,8 @@ if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-clou
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-cloud-sdk/completion.bash.inc' ]; then source '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-cloud-sdk/completion.bash.inc'; fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 source ~/.local_bashrc
 source $HOME/.cargo/env
