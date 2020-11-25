@@ -34,6 +34,7 @@
 | ? | show all tmux commands |
 | " | split pane horizontally |
 | % | split pane vertically |
+| x | kill pane |
 
 ## Custom
 
