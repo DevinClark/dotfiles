@@ -11,8 +11,6 @@ options=("blank" "tmuxinator" $(IFS=$'\n' tmux list-sessions -F "#S" 2>/dev/null
 
 opt=$(printf '%s\n' "${options[@]}" | fzf --no-sort --cycle --no-info --no-multi --height "30%" --prompt "Session Name: ")
 
-echo $status
-
 case $opt in
   "")
     exit 0

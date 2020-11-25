@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
 alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
@@ -23,7 +25,7 @@ git_aliases() {
   for i in $(git config --get-regexp "alias."); do
     IFS=$'\n' read -d "" -ra arr <<< "${i// /$'\n'}"
     local name=${arr[0]/alias./}
-    alias "g$name= git $name; git st"
+    alias "g$name= git $name"
   done
 }
 

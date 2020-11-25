@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -58,7 +60,7 @@ shopt -s checkwinsize
 set_prompt() {
   PS1_USERNAME="\u"
   PS1_PWD="\w"
-  PS1_IS_ROOT="\$"
+  # PS1_IS_ROOT="\$"
   BG_BLACK="\[$(tput setab 0)\]"
   BG_GREY="\[$(tput setab 8)\]"
   BG_RED="\[$(tput setab 1)\]"
@@ -90,15 +92,15 @@ md() {
 my_path() {
   IFS=":";
   for p in $PATH;
-    do echo $p;
+    do echo "$p";
   done
 }
 
 cdls() {
   if [[ $# -gt 0 ]]; then
-    builtin cd "$1"; ls -a
+    builtin cd "$1" || exit; ls -a
   else
-    builtin cd "$@"; ls -a
+    builtin cd "$@" || exit; ls -a
   fi
 }
 
@@ -128,4 +130,4 @@ if [ -f '/home/dddev/Downloads/google-cloud-sdk-209.0.0-linux-x86_64/google-clou
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 source ~/.local_bashrc
-source $HOME/.cargo/env
+source "$HOME/.cargo/env"
