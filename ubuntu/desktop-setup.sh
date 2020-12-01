@@ -71,7 +71,7 @@ function install_nodejs() {
   VERSION="${1:-14}"
   curl -sL "https://deb.nodesource.com/setup_${VERSION}.x" | sudo -E bash -
   sudo apt install -y nodejs
-  
+
   if [ ! -d ~/npm ]; then mkdir ~/npm; fi
 
   npm config set -g prefix ~/npm
@@ -120,8 +120,16 @@ function install_sublime_text() {
 }
 
 function install_zoom() {
-  # download deb into tmpdir
-  # install deb
+  local tmpdir=$(mktemp -d)
+
+  curl -L https://zoom.us/client/latest/zoom_amd64.deb -o "$tmpdir/zoom_amd64.deb"
+
+  ls -al "$tmpdir"
+
+  sudo dpkg -i "$tmpdir/zoom_amd64.deb"
+
+  rm -rf "$tmpdir"
+  unset tmpdir
 }
 
 # PPAs
