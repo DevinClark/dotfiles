@@ -5,7 +5,6 @@ set -euxo pipefail
 echo "Get The Basics"
 
 if [ ! -d ~/AppImage ]; then mkdir ~/AppImage; fi
-if [ ! -d ~/npm ]; then mkdir ~/npm; fi
 touch ~/.local_bashrc
 
 sudo apt -y install software-properties-common wget tar
@@ -72,6 +71,8 @@ function install_nodejs() {
   VERSION="${1:-14}"
   curl -sL "https://deb.nodesource.com/setup_${VERSION}.x" | sudo -E bash -
   sudo apt install -y nodejs
+  
+  if [ ! -d ~/npm ]; then mkdir ~/npm; fi
 
   npm config set -g prefix ~/npm
   npm config set -g save-exact true
@@ -116,6 +117,11 @@ function install_sublime_text() {
   # Make sublime text the default editor
   # https://askubuntu.com/a/227567
   sudo sed -i 's/gedit/sublime_text/g' /etc/gnome/defaults.list
+}
+
+function install_zoom() {
+  # download deb into tmpdir
+  # install deb
 }
 
 # PPAs
@@ -195,6 +201,7 @@ gsettings set org.gnome.desktop.interface clock-format 12h
 snap remove gnome-calculator
 sudo apt install gnome-calculator
 
+install_zoom
 
 echo "Clean Up"
 sudo apt upgrade -y
