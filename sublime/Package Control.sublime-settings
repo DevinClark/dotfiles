@@ -25,6 +25,7 @@
 		"LSP-css",
 		"LSP-eslint",
 		"LSP-typescript",
+		"LSP-vue",
 		"MarkdownPreview",
 		"NeoVintageous",
 		"nginx",
@@ -47,6 +48,7 @@
 		"Theme - Spacegray",
 		"Tmux Syntax Highlight",
 		"TypeScript",
-		"TypeScript Syntax"
+		"TypeScript Syntax",
+		"Vue Syntax Highlight"
 	]
 }
