@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cd "$1" || exit; git describe --contains --all HEAD
+cd "$1" && git describe --contains --all HEAD || echo "?"
