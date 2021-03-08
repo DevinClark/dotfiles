@@ -2,7 +2,12 @@
 	"added_words":
 	[
 		"Techlahoma",
-		"fundraising"
+		"fundraising",
+		"plugins",
+		"Postgres",
+		"Preact",
+		"plugin",
+		"Hapi"
 	],
 	"always_show_minimap_viewport": false,
 	"auto_complete_triggers":
@@ -79,10 +84,12 @@
 	"ignored_packages":
 	[
 		"Rust",
+		"Sass",
 		"Six",
 		"SublimeLinter",
 		"SublimeLinter-eslint",
 		"SublimeLinter-shellcheck",
+		"TypeScript",
 		"Vintage",
 		"Vintageous"
 	],
