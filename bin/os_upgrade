@@ -6,7 +6,7 @@ sudo apt update;
 
 sudo apt upgrade -y;
 
-gem update;
+sudo gem update;
 
 # Update global npm packages to latest version.
 for package in $(npm -g outdated --parseable --depth=0 | grep -vE "(@npm)" | cut -d: -f4)
