@@ -6,6 +6,7 @@ ln -sf "$(pwd)/.tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/ubuntu/.bashrc" ~/.bashrc
 ln -sf "$(pwd)/ubuntu/.bash_aliases" ~/.bash_aliases
 ln -sf "$(pwd)/.gitconfig" ~/.gitconfig
+ln -sf "$(pwd)/.gitignore_global" ~/.gitignore
 
 mkdir -p ~/.config/nvim
 ln -sf "$(pwd)/.vimrc" ~/.config/nvim/init.vim

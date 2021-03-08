@@ -98,9 +98,9 @@ my_path() {
 
 cdls() {
   if [[ $# -gt 0 ]]; then
-    builtin cd "$1" || exit; ls -a
+    builtin cd "$1" && ls -a
   else
-    builtin cd "$@" || exit; ls -a
+    builtin cd "$@" && ls -a
   fi
 }
 
