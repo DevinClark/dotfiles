@@ -13,6 +13,7 @@ sudo apt -y install software-properties-common wget tar
 
 # PPAs
 add_ppa system76/pop
+add_ppa git-core/ppa
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 add_ppa "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
