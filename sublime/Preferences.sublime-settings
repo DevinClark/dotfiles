@@ -75,7 +75,8 @@
 		".rts2_cache_cjs",
 		".rts2_cache_es",
 		".rts2_cache_umd",
-		"*.next/**"
+		"*.next/**",
+		"*.out/**"
 	],
 	"font_face": "Ubuntu Mono",
 	"font_options":

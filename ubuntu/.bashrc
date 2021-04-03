@@ -65,10 +65,11 @@ set_prompt() {
   # PS1_IS_ROOT="\$"
   BG_BLACK="\[$(tput setab 0)\]"
   BG_GREY="\[$(tput setab 8)\]"
-  BG_RED="\[$(tput setab 1)\]"
+  # BG_RED="\[$(tput setab 1)\]"
+  BG_GREEN="\[$(tput setab 2)\]"
   BG_WHITE="\[$(tput setab 7)\]"
 
-  RED="\[$(tput setaf 1)\]"
+  # RED="\[$(tput setaf 1)\]"
   GREEN="\[$(tput setaf 2)\]"
   GREY="\[$(tput setaf 8)\]"
   BLACK="\[$(tput setaf 0)\]"
@@ -76,9 +77,9 @@ set_prompt() {
   RESET_COLOR="\[$(tput sgr0)\]"
 
   if [[ -z "${TMUX}" ]]; then
-    export PS1="$BG_RED$BLACK $PS1_USERNAME $RED$BG_WHITE$BG_WHITE$BLACK $PS1_PWD $WHITE$BG_GREY$GREEN\$(__git_ps1)$BLACK $GREY$BG_BLACK$RESET_COLOR "
+    export PS1="$BG_GREEN$BLACK $PS1_USERNAME $GREEN$BG_WHITE$BG_WHITE$BLACK $PS1_PWD $WHITE$BG_GREY$GREEN\$(__git_ps1)$BLACK $GREY$BG_BLACK$RESET_COLOR "
   else
-    export PS1="$BG_RED$BLACK $PS1_USERNAME:$PS1_PWD $BG_BLACK$RED$RESET_COLOR "
+    export PS1="$BG_GREEN$BLACK $PS1_USERNAME:$PS1_PWD $BG_BLACK$GREEN$RESET_COLOR "
   fi
 }
 
