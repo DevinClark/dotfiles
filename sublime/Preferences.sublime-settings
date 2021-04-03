@@ -23,7 +23,8 @@
 	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
-	"binary_file_patterns": [
+	"binary_file_patterns":
+	[
 		"**/package-lock.json"
 	],
 	"bold_folder_labels": true,
@@ -32,6 +33,7 @@
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
+	"enable_typescript_language_service": false,
 	"ensure_newline_at_eof_on_save": false,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -124,7 +126,6 @@
 	"tab_size": 2,
 	"theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"enable_typescript_language_service": false,
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": false,
