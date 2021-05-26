@@ -38,7 +38,7 @@ echo "Dev Stuff"
 install_sublime_text
 sudo apt install -y nginx vagrant neovim
 
-install_tmux_from_source "3.1c"
+install_tmux_from_source "3.2"
 install_fzf
 install_ripgrep "11.0.2"
 

@@ -5,10 +5,8 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
 		"AdvancedNewFile",
 		"AutoFileName",
-		"Babel",
 		"Build Next",
 		"Color Highlighter",
 		"DocBlockr",
@@ -25,7 +23,6 @@
 		"LSP-css",
 		"LSP-eslint",
 		"LSP-typescript",
-		"LSP-vue",
 		"MarkdownPreview",
 		"NeoVintageous",
 		"nginx",
@@ -39,6 +36,7 @@
 		"ReactJS",
 		"Rust Enhanced",
 		"Sass",
+		"SCSS",
 		"SideBarMenuAdvanced",
 		"SideBarTools",
 		"SnippetMaker",
@@ -52,7 +50,5 @@
 		"Theme - Spacegray",
 		"Tmux Syntax Highlight",
 		"TypeScript",
-		"TypeScript Syntax",
-		"Vue Syntax Highlight"
-	]
+	],
 }

@@ -14,22 +14,25 @@
 	[
 		{
 			"characters": ".",
-			"selector": "source.js"
+			"selector": "source.js",
 		},
 		{
 			"characters": "/",
-			"selector": "string.quoted.double.html,string.quoted.single.html, source.css"
+			"selector": "string.quoted.double.html,string.quoted.single.html, source.css",
 		}
 	],
 	"auto_format_on_save": true,
 	"auto_format_on_save_requires_prettier_config": true,
-	"binary_file_patterns": [
+	"binary_file_patterns":
+	[
 		"**/package-lock.json"
 	],
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
 	"caret_style": "solid",
-	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"light_color_scheme": "Mariana.sublime-color-scheme",
+	"dark_color_scheme": "Sixteen.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": false,
@@ -57,7 +60,8 @@
 		"*.db",
 		"*.sublime-workspace",
 		"*.min.js",
-		"*.snap"
+		"*.snap",
+		".eslintcache"
 	],
 	"folder_exclude_patterns":
 	[
@@ -96,7 +100,7 @@
 		"SublimeLinter-shellcheck",
 		"TypeScript",
 		"Vintage",
-		"Vintageous"
+		"Vintageous",
 	],
 	"indent_guide_options":
 	[
@@ -110,7 +114,8 @@
 		"*build/**",
 		"*dist/**",
 		"__snapshots__",
-		"*coverage/**"
+		"*coverage/**",
+		".eslintcache",
 	],
 	"line_padding_bottom": 4,
 	"line_padding_top": 4,
@@ -124,10 +129,12 @@
 	"spacegray_tabs_large": true,
 	"tab_size": 2,
 	"theme": "Spacegray Light.sublime-theme",
+	"light_theme": "Spacegray Light.sublime-theme",
+	"dark_theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_super_keys": false,
-	"word_wrap": true
+	"word_wrap": true,
 }
