@@ -28,7 +28,7 @@ function clone_or_pull() {
 }
 
 function install_tmux_from_source() {
-  VERSION="${1:-3.1c}"
+  VERSION="${1:-3.2}"
   sudo apt -y install libevent-dev libncurses-dev
   wget "https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz"
   tar xf "tmux-${VERSION}.tar.gz"
