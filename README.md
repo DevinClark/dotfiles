@@ -52,6 +52,12 @@
 | k | pane move up |
 | l | pane move right |
 
+## Terminal 
+| Shortcut | Function |
+|----------|----------|
+| ALT + c  | fzf fuzzy cd |
+| CTRL + r | fzf fuzzy history |
+
 # Sublime Text
 
 | Key | Function |
