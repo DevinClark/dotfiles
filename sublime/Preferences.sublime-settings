@@ -35,6 +35,7 @@
 	"dark_color_scheme": "Sixteen.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
+	"enable_typescript_language_service": false,
 	"ensure_newline_at_eof_on_save": false,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":

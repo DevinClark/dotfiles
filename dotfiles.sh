@@ -17,3 +17,5 @@ ln -sf "$(pwd)/.vimrc" ~/.config/nvim/init.vim
 if [ ! -d ~/.tmuxinator ]; then ln -sf "$(pwd)/.tmuxinator" ~/.tmuxinator; fi
 
 if [ ! -d ~/.config/sublime-text-3/Packages/User ]; then ln -sf "$(pwd)/sublime" ~/.config/sublime-text-3/Packages/User; fi
+
+if [ ! -d ~/.config/micro ]; then ln -sf "$(pwd)/micro" ~/.config/micro; fi

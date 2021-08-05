@@ -14,6 +14,7 @@ sudo apt -y install software-properties-common wget tar
 # PPAs
 add_ppa system76/pop
 add_ppa git-core/ppa
+add_ppa obsproject/obs-studio
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 add_ppa "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
@@ -29,6 +30,8 @@ sudo apt install -y exfat-fuse exfat-utils
 sudo apt install -y tree htop git curl tig shellcheck xclip urlview entr fd-find
 
 sudo apt install -y chromium-browser
+
+sudo apt install -y ffmpeg v4l2loopback-dkms obs-studio
 
 ## Firewall
 sudo apt install -y gufw
