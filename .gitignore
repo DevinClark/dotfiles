@@ -1,4 +1,6 @@
 .DS_Store
+
+# sublime text
 Package Control.last-run
 Package Control.ca-list
 Package Control.ca-bundle
@@ -10,3 +12,7 @@ Package Control.ca-certs/
 oscrypto-ca-bundle.crt
 sublime/Color Highlighter/ColorPicker/ColorPicker_osx_x64
 sublime/Color Highlighter/icons/*
+
+# micro
+micro/backups
+micro/buffers
