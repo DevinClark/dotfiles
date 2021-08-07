@@ -1,4 +1,10 @@
 {
     "Alt-/": "lua:comment.comment",
-    "CtrlUnderscore": "lua:comment.comment"
+    "Ctrl-F2": "command:toggleBookmark",
+    "CtrlShift-F2": "command:clearBookmarks",
+    "CtrlShift-p": "CommandMode",
+    "CtrlUnderscore": "lua:comment.comment",
+    "F2": "command:nextBookmark",
+    "F4": "command:jumptag",
+    "Shift-F2": "command:prevBookmark"
 }
