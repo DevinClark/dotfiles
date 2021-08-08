@@ -21,8 +21,6 @@
 			"selector": "string.quoted.double.html,string.quoted.single.html, source.css",
 		}
 	],
-	"auto_format_on_save": true,
-	"auto_format_on_save_requires_prettier_config": true,
 	"binary_file_patterns":
 	[
 		"**/package-lock.json"
@@ -30,12 +28,11 @@
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
 	"caret_style": "solid",
-	"color_scheme": "Mariana.sublime-color-scheme",
-	"light_color_scheme": "Mariana.sublime-color-scheme",
-	"dark_color_scheme": "Sixteen.sublime-color-scheme",
+	"color_scheme": "auto",
+	"light_color_scheme": "Sixteen.sublime-color-scheme",
+	"dark_color_scheme": "Mariana.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": false,
-	"enable_typescript_language_service": false,
 	"ensure_newline_at_eof_on_save": false,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -93,12 +90,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Rust",
-		"Sass",
 		"Six",
-		"SublimeLinter",
-		"SublimeLinter-eslint",
-		"SublimeLinter-shellcheck",
 		"TypeScript",
 		"Vintage",
 		"Vintageous",
@@ -131,7 +123,7 @@
 	"tab_size": 2,
 	"theme": "Spacegray Light.sublime-theme",
 	"light_theme": "Spacegray Light.sublime-theme",
-	"dark_theme": "Spacegray.sublime-theme",
+	"dark_theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_reset_mode_when_switching_tabs": false,

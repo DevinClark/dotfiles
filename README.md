@@ -52,7 +52,8 @@
 | k | pane move up |
 | l | pane move right |
 
-## Terminal 
+# Terminal 
+
 | Shortcut | Function |
 |----------|----------|
 | ALT + c  | fzf fuzzy cd |
