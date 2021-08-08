@@ -1,0 +1,42 @@
+{
+  "variables": {
+    "cyan": "#a9d1d1",
+    "cyan2": "#3e999f",
+    "grey3": "#aaaaaa",
+    "grey5": "#444444",
+    "grey8": "#787878",
+  },
+  "rules": [
+    {
+      "name": "YAML FrontMatter",
+      "scope": "text.html.markdown meta.frontmatter.markdown",
+      "background": "#262626",
+    },
+    {
+      "name": "YAML Key",
+      "scope": "entity.name.tag.yaml",
+      "foreground": "#706f70"
+    },
+    {
+      "name": "Comment",
+      "scope": "comment",
+      "foreground": "var(grey5)"
+    },
+    {
+      "name": "Variable, String Link, Tag Name",
+      "scope": "variable, support.other.variable, string.other.link, entity.name.tag, entity.other.attribute-name, meta.tag, declaration.tag",
+      "foreground": "var(grey8)"
+    },
+    {
+      "name": "Number, Constant, Function Argument, Tag Attribute, Embedded, String, Symbols, Inherited Class, Markup Heading, Keyword, Storage",
+      "scope": "constant.numeric, constant.language, support.constant, constant.character, variable.parameter, punctuation.section.embedded, keyword.other.unit, string, constant.other.symbol, entity.other.inherited-class, markup.heading, keyword, storage, storage.type, entity.name.tag.css",
+      "foreground": "var(cyan)"
+    },
+    {
+      "name": "Operator, Misc",
+      "scope": "keyword.operator, constant.other.color",
+      "foreground": "var(grey3)"
+    },
+  ],
+  "globals": {}
+}
