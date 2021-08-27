@@ -7,7 +7,8 @@
 		"Postgres",
 		"Preact",
 		"plugin",
-		"Hapi"
+		"Hapi",
+		"Github",
 	],
 	"always_show_minimap_viewport": false,
 	"auto_complete_triggers":

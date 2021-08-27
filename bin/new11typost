@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -Eeo pipefail
+
+header="---
+title: Title
+meta_title: test
+meta_description: test
+date: $(date +"%Y-%m-%d")
+permalink: false
+author: devin
+tags:
+  - tag1
+---
+
+
+"
+
+file="src/site/blog/$1.md"
+
+
+if [[ -f "$file" ]]; then
+  echo "$file already exists."
+else
+  echo "Creating $file."
+  echo "$header" > "$file"
+fi;

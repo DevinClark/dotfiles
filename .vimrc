@@ -51,9 +51,9 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
 
   " Tab control
   set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-  set tabstop=4 " the visible width of tabs
-  set softtabstop=4 " edit as if the tabs are 4 characters wide
-  set shiftwidth=4 " number of spaces to use for indent and unindent
+  set tabstop=2 " the visible width of tabs
+  set softtabstop=2 " edit as if the tabs are 4 characters wide
+  set shiftwidth=2 " number of spaces to use for indent and unindent
   set shiftround " round indent to a multiple of 'shiftwidth'
 
   " code folding settings
@@ -82,7 +82,7 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
 
 " General Mappings {{{
   " set a map leader for more key combos
-  let mapleader = ','
+  let mapleader = ' '
 
   inoremap jj <esc>
 
@@ -144,6 +144,16 @@ endif
 
   Plug 'reedes/vim-colors-pencil'
 
+  Plug 'arcticicestudio/nord-vim'
+
+  Plug 'ctrlpvim/ctrlp.vim'
+  let g:ctrlp_user_command = {
+    \ 'types': {
+      \ 1: ['.git', 'cd %s && git ls-files']
+    \ },
+    \ 'fallback': 'fd %s'
+  \ }
+
   Plug 'niftylettuce/vim-jinja'
 
   Plug 'plasticboy/vim-markdown'
@@ -204,8 +214,7 @@ endif
 
   let g:startify_bookmarks = [
       \ { 'c': '~/.config/nvim/init.vim' },
-      \ { 'g': '~/.gitconfig' },
-      \ { 'z': '~/.zshrc' }
+      \ { 'g': '~/.gitconfig' }
   \ ]
 
   autocmd User Startified setlocal cursorline
@@ -217,4 +226,4 @@ endif
 call plug#end()
 " }}}
 
-source ~/Development/dotfiles/vim/theme.vim
+colorscheme nord
