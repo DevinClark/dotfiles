@@ -1,15 +1,4 @@
-
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync
-endif
-
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
-
-call plug#begin('~/.config/nvim/plugged')
+source ~/Development/dotfiles/vim/plugins.vim
 
 set spell
 
@@ -20,7 +9,6 @@ syntax on " Enable syntax highlighting.
 set autoread " detect when a file is changed
 
 set history=1000 " change history to 1000
-set textwidth=120
 
 " Searching
 set ignorecase " case insensitive searching
@@ -28,33 +16,42 @@ set smartcase " case-sensitive if expresson contains a capital letter
 set hlsearch " highlight search results
 set incsearch " set incremental search, like modern browsers
 
+set backspace=indent,eol,start " make backspace behave in a sane manner
 set laststatus=1
 
-set tabstop=2
+" Disable recording for now.
+map q <Nop>
 
 if has('mouse')
   set mouse=a
 endif
 
-set backspace=indent,eol,start " make backspace behave in a sane manner
 
 " Appearance {{{
+  colorscheme nord
+  set textwidth=120
+  set colorcolumn=120
   set wrap " turn on line wrapping
   set wrapmargin=8 " wrap lines when coming within n characters from side
   set linebreak " set soft wrapping
   set showbreak=↪
-  set autoindent " automatically set indent of new line
   set ttyfast " faster redrawing
   set showcmd " show incomplete commands
+  set listchars=trail:.,tab:>-,eol:¬ " Change the invisible characters
+
   set wildmode=list:longest " complete files like a shell
   set shell=$SHELL
 
   " Tab control
   set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-  set tabstop=2 " the visible width of tabs
+  set tabstop=2 " two tab spaces
   set softtabstop=2 " edit as if the tabs are 4 characters wide
   set shiftwidth=2 " number of spaces to use for indent and unindent
   set shiftround " round indent to a multiple of 'shiftwidth'
+  set iskeyword+=\- " Autocomplete words with dashes
+  set expandtab " Spaces instead of tabs for better cross-editor compatibility
+  set autoindent " Keep the indent when creating a new line
+  set cindent " Recommended seting for automatic C-style indentation
 
   " code folding settings
   set foldmethod=syntax " fold based on indent
@@ -76,7 +73,7 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
   set columns=100 " size of the editable area
   set noruler " don't show ruler
   set linebreak " break the lines on words
-  set scrolloff=5
+  set scrolloff=8
 
 " }}}
 
@@ -93,33 +90,9 @@ set backspace=indent,eol,start " make backspace behave in a sane manner
   map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 " }}}
 
-" AutoGroups {{{
-  " file type specific settings
-  augroup configgroup
-      autocmd!
-
-    " automatically resize panes on resize
-    autocmd VimResized * exe 'normal! \<c-w>='
-    autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
-    autocmd BufWritePost .vimrc.local source %
-
-  augroup END
-
-  augroup markdown
-    autocmd!
-
-    autocmd BufNewFile,BufRead *.md set filetype=markdown
-    autocmd FileType markdown,mkd,text call Prose()
-    autocmd FileType markdown setlocal spell spelllang=en_us
-  augroup END
-
-  function! Prose()
-    colorscheme pencil
-    set background=dark
-    call pencil#init()
-  endfunction
-
-" }}}
+for f in split(glob('~/Development/dotfiles/vim/languages/*.vim'), '\n')
+  exe 'source' f
+endfor
 
 " Store temporary files in ~/.vim/tmp
 set viminfo+=n~/.vim/tmp/viminfo
@@ -136,46 +109,20 @@ if has('persistent_undo')
   if !isdirectory(&undodir) | call mkdir(&undodir, 'p', 0700) | endif
 endif
 
-" {{{ General Plugins
-  Plug 'reedes/vim-pencil'
+" {{{ Vim-Pencil
   let g:pencil#wrapModeDefault = 'soft'
+" }}}
 
-  Plug 'junegunn/limelight.vim'
-
-  Plug 'reedes/vim-colors-pencil'
-
-  Plug 'arcticicestudio/nord-vim'
-
-  Plug 'ctrlpvim/ctrlp.vim'
+" {{{ Ctrl+p
   let g:ctrlp_user_command = {
     \ 'types': {
       \ 1: ['.git', 'cd %s && git ls-files']
     \ },
     \ 'fallback': 'fd %s'
   \ }
-
-  Plug 'niftylettuce/vim-jinja'
-
-  Plug 'plasticboy/vim-markdown'
-  let g:vim_markdown_conceal = 2
-  let g:vim_markdown_conceal_code_blocks = 0
-  let g:vim_markdown_math = 1
-  let g:vim_markdown_toml_frontmatter = 1
-  let g:vim_markdown_frontmatter = 1
-  let g:vim_markdown_frontmatter = 1
-  let g:vim_markdown_strikethrough = 1
-  let g:vim_markdown_autowrite = 1
-  let g:vim_markdown_edit_url_in = 'tab'
-  let g:vim_markdown_follow_anchor = 1
-
-  Plug 'benmills/vimux'
-
 " }}}
 
 " {{{ Startupify
-  Plug 'tpope/vim-fugitive'
-  Plug 'mhinz/vim-startify'
-
   " Don't change to directory when selecting a file
   let g:startify_files_number = 5
   let g:startify_change_to_dir = 0
@@ -219,11 +166,18 @@ endif
 
   autocmd User Startified setlocal cursorline
   nmap <leader>st :Startify<cr>
-
 " }}}
 
-
-call plug#end()
+" {{{ Vim-Markdown
+  let g:markdown_include_jekyll_support = 0
+  let g:vim_markdown_conceal = 2
+  let g:vim_markdown_conceal_code_blocks = 0
+  let g:vim_markdown_math = 1
+  let g:vim_markdown_toml_frontmatter = 1
+  let g:vim_markdown_frontmatter = 1
+  let g:vim_markdown_frontmatter = 1
+  let g:vim_markdown_strikethrough = 1
+  let g:vim_markdown_autowrite = 1
+  let g:vim_markdown_edit_url_in = 'tab'
+  let g:vim_markdown_follow_anchor = 1
 " }}}
-
-colorscheme nord
