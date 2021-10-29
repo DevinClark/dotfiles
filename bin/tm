@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
+
 set -Eeo pipefail
 
-# bail if we're already inside a TMUX session
-[ "$TMUX" == "" ] || exit 0
+function not_in_tmux() {
+  [ -z "$TMUX" ]
+}
+
+function session_exists() {
+  tmux has-session -t "=$1"
+}
 
 # tmuxinator_projects=($(IFS=$'\n' tmuxinator list --newline))
 
 # present menu for user to choose which workspace to open
-options=("blank" "tmuxinator" $(IFS=$'\n' tmux list-sessions -F "#S" 2>/dev/null))
+options=("new" $(IFS=$'\n' tmux list-sessions -F "#S" 2>/dev/null))
 
 opt=$(printf '%s\n' "${options[@]}" | fzf --no-sort --cycle --no-info --no-multi --height "30%" --prompt "Session Name: ")
 
@@ -15,17 +21,23 @@ case $opt in
   "")
     exit 0
     ;;
-  "blank")
+  "new")
     read -rp "Enter new session name: " SESSION_NAME
-    tmux new -s "$SESSION_NAME"
-    ;;
+    if [ -z "$SESSION_NAME" ]; then
+      exit 1
+    fi
 
-  "tmuxinator")
-    read -rp "Enter tmuxinator project name: " SESSION_NAME
-    tmuxinator start "$SESSION_NAME"
+    TMUX='' tmux new-session -Ad -s "$SESSION_NAME" -c "$(pwd)"
+
+    if not_in_tmux; then
+      tmux attach-session -t "$opt"
+    fi
     ;;
 
   *)
-    tmux attach-session -t "$opt"
+    if not_in_tmux; then
+      tmux attach-session -t "$opt"
+    else
+      tmux switch-client -t "$opt"
     ;;
 esac

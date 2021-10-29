@@ -2,11 +2,17 @@
 
 set -euxo pipefail
 
+source ~/Development/dotfiles/ubuntu/install_functions.sh
+
 sudo apt update;
 
 sudo apt upgrade -y;
 
 sudo gem update;
+
+sudo gem cleanup;
+
+install_go;
 
 # Update global npm packages to latest version.
 for package in $(npm -g outdated --parseable --depth=0 | grep -vE "(@npm)" | cut -d: -f4)

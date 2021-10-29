@@ -2,11 +2,11 @@
 
 set -Eeo pipefail
 
-START_DIR="~/Development/scx/customer-website-frontend"
+START_DIR=~/Development/scx/customer-website-frontend
 SESSION_NAME="scx"
 
 create_session() {
-  set -- $(stty size) # $1 = rows $2 = columns
+  set -- "$(stty size)" # $1 = rows $2 = columns
   tmux new-session -d -s $SESSION_NAME -x "$2" -y "$(($1 - 1))" -c "$START_DIR"
 }
 
@@ -23,7 +23,7 @@ create_window() {
 }
 
 split_window() {
-  tmux split-window $@
+  tmux split-window "$@"
 }
 
 create_session

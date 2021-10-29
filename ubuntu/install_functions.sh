@@ -71,6 +71,8 @@ function install_nodejs() {
 }
 
 function install_go() {
+  rm -rf "~/.go"
+
   local tmpdir=$(mktemp -d)
   local installer="$tmpdir/installer_linux"
 

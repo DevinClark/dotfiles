@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+${0}
+]]></content>
+  <tabTrigger>shebang</tabTrigger>
+  <scope>source.shell.bash</scope>
+</snippet>

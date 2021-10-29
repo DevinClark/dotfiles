@@ -10,6 +10,7 @@
 		"Hapi",
 		"Redux",
 		"lifecycle",
+		"Github",
 	],
 	"always_show_minimap_viewport": false,
 	"auto_complete_triggers":
@@ -25,7 +26,8 @@
 	],
 	"binary_file_patterns":
 	[
-		"**/package-lock.json"
+		"**/package-lock.json",
+		"**/*.map"
 	],
 	"bold_folder_labels": true,
 	"caret_extra_width": 2,
@@ -92,6 +94,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"NeoVintageous",
 		"Six",
 		"Vintage",
 		"Vintageous",
@@ -115,7 +118,6 @@
 	"line_padding_top": 4,
 	"neovintageous_build_version": 11100,
 	"scroll_past_end": true,
-	"show_definitions": false,
 	"spacegray_fileicons": true,
 	"spacegray_sidebar_font_xlarge": true,
 	"spacegray_sidebar_tree_xlarge": true,
@@ -126,7 +128,7 @@
 	"light_theme": "Spacegray Light.sublime-theme",
 	"dark_theme": "Spacegray Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": "not_on_caret",
 	"vintageous_reset_mode_when_switching_tabs": false,
 	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_super_keys": false,
