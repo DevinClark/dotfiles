@@ -7,7 +7,9 @@
 		"Postgres",
 		"Preact",
 		"plugin",
-		"Hapi"
+		"Hapi",
+		"Redux",
+		"lifecycle",
 	],
 	"always_show_minimap_viewport": false,
 	"auto_complete_triggers":
@@ -91,7 +93,6 @@
 	"ignored_packages":
 	[
 		"Six",
-		"TypeScript",
 		"Vintage",
 		"Vintageous",
 	],

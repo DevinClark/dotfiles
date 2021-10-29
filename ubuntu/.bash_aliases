@@ -3,7 +3,6 @@
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -o'
 alias os_upgrade="~/Development/dotfiles/bin/os_upgrade"
-alias t='tree -a --prune -I $([ -f ~/.fzf.bash ] && $(cat .gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|"))'
 alias ripgrep="rg"
 alias fd=fdfind
 alias ll='ls -alF'

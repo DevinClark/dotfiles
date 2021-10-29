@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -Eeo pipefail
+
+rg --files | tree -a --fromfile $@

@@ -20,7 +20,7 @@
     {
       "name": "Comment",
       "scope": "comment",
-      "foreground": "var(grey5)"
+      "foreground": "var(grey3)"
     },
     {
       "name": "Variable, String Link, Tag Name",
@@ -28,8 +28,8 @@
       "foreground": "var(grey8)"
     },
     {
-      "name": "Number, Constant, Function Argument, Tag Attribute, Embedded, String, Symbols, Inherited Class, Markup Heading, Keyword, Storage",
-      "scope": "constant.numeric, constant.language, support.constant, constant.character, variable.parameter, punctuation.section.embedded, keyword.other.unit, string, constant.other.symbol, entity.other.inherited-class, markup.heading, keyword, storage, storage.type, entity.name.tag.css",
+      "name": "Number, Constant, Function Argument, Tag Attribute, Embedded, String, Symbols, Inherited Class Keyword, Storage",
+      "scope": "constant.numeric, constant.language, support.constant, constant.character, variable.parameter, punctuation.section.embedded, keyword.other.unit, string, constant.other.symbol, entity.other.inherited-class keyword, storage, storage.type, entity.name.tag.css",
       "foreground": "var(cyan)"
     },
     {
