@@ -1,0 +1,3 @@
+{
+  "test_file_patterns": [".test.tsx", ".test.ts", ".test.js", "_test.go"],
+}
