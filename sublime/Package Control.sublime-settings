@@ -23,6 +23,7 @@
 		"LSP-bash",
 		"LSP-css",
 		"LSP-eslint",
+		"LSP-gopls",
 		"LSP-html",
 		"LSP-json",
 		"LSP-tailwindcss",

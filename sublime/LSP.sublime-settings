@@ -16,10 +16,10 @@
 		"gopls":
 		{
 			"enabled": true,
-			"command": ["gopls"],
+			"command": ["~/gopath/bin/gopls"],
 			"selector": "source.go",
 			"initializationOptions": {
-				"experimentalWorkspaceModule": false
+				"experimentalWorkspaceModule": true
 			},
 			"env": {
 				"GOPATH": "",
@@ -63,7 +63,5 @@
 	},
 	"show_references_in_quick_panel": true,
 	"log_debug": true,
-	"inhibit_snippet_completions": true,
-	"inhibit_word_completions": true,
 	"show_diagnostics_panel_on_save": 4,
 }
