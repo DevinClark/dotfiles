@@ -59,7 +59,7 @@ function install_ripgrep() {
 }
 
 function install_nodejs() {
-  VERSION="${1:-14}"
+  VERSION="${1:-16}"
   curl -sL "https://deb.nodesource.com/setup_${VERSION}.x" | sudo -E bash -
   sudo apt install -y nodejs
 
