@@ -5,8 +5,10 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AdvancedNewFile",
 		"AutoFileName",
+		"ayu",
 		"Build Next",
 		"Color Highlighter",
 		"DocBlockr",
@@ -42,7 +44,6 @@
 		"Rust Enhanced",
 		"SCSS",
 		"SideBarMenuAdvanced",
-		"SideBarTools",
 		"SnippetMaker",
 		"StickWithMarkdownSnippets",
 		"Syntax Highlighting for PostCSS",
