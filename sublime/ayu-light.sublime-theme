@@ -1,0 +1,58 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+  "variables":
+  {
+  },
+  "rules":
+  [
+    {
+      "class": "sidebar_heading",
+      "font.size": 14
+    },
+    {
+      "class": "sidebar_label",
+      "font.size": 14,
+      "font.face": "Ubuntu"
+    },
+    {
+      "class": "sidebar_heading",
+      "font.face": "Ubuntu"
+    },
+    {
+      "class": "tab_label",
+      "font.face": "Ubuntu"
+    },
+    {
+      "class": "label_control",
+      "font.face": "Ubuntu"
+    },
+    {
+      "class": "quick_panel_label",
+      "font.face": "Ubuntu"
+    },
+    {
+      "class": "quick_panel_path_label",
+      "font.face": "Ubuntu"
+    },
+    {
+      "class": "sheet_contents",
+      "settings": {
+        "inactive_sheet_dimming": true
+      },
+      "attributes": [
+        "!highlighted"
+      ],
+      "background_modifier": ""
+    },
+    {
+      "class": "tab_control",
+      "attributes": [
+        "hover"
+      ],
+      "settings": [
+        "!ui_separator"
+      ],
+      "layer0.tint": "#ffaa33",
+    },
+  ]
+}

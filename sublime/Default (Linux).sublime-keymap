@@ -15,4 +15,5 @@
     "context": [{"key": "vi_insert_mode_aware"}]
   },
   { "keys": ["ctrl+shift+."], "command": "toggle_test" },
+  { "keys": ["ctrl+t"], "command": "toggle_test" },
 ]

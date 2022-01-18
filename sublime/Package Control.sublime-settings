@@ -5,8 +5,10 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AdvancedNewFile",
 		"AutoFileName",
+		"ayu",
 		"Build Next",
 		"Color Highlighter",
 		"DocBlockr",
@@ -23,6 +25,7 @@
 		"LSP-bash",
 		"LSP-css",
 		"LSP-eslint",
+		"LSP-gopls",
 		"LSP-html",
 		"LSP-json",
 		"LSP-tailwindcss",
@@ -41,7 +44,6 @@
 		"Rust Enhanced",
 		"SCSS",
 		"SideBarMenuAdvanced",
-		"SideBarTools",
 		"SnippetMaker",
 		"StickWithMarkdownSnippets",
 		"Syntax Highlighting for PostCSS",
