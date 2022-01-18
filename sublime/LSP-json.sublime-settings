@@ -1,0 +1,12 @@
+// Settings in here override those in "LSP-json/LSP-json.sublime-settings"
+
+{
+  "settings": {
+    "userSchemas": [
+      {
+        "fileMatch": ["/tsconfig.*.json"],
+        "uri": "https://json.schemastore.org/tsconfig.json"
+      }
+    ]
+  }
+}
